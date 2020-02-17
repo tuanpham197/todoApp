@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Futura PT';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Tangerine'), url('../font/futura-pt-medium.otf') format('truetype');
+  }
+
+@import './header/header.scss';
+@import './sidebar/menu.scss';
+@import './note/notelist.scss';
+
+* {
+    margin:0px;
+    padding:0px;
+}
+#wrapper{
+    display: flex;
+}

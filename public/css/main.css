@@ -1,0 +1,132 @@
+@font-face {
+  font-family: "Futura PT";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Tangerine"), url("../font/futura-pt-medium.otf") format("truetype");
+}
+.menu_left {
+  font-size: 16px;
+  background-color: #313F46;
+  width: 270px;
+  position: fixed;
+  height: 800px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+.menu_left_create a {
+  font-family: "Futura PT", sans-serif;
+  color: #37312B;
+  display: block;
+  background-color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 11px;
+}
+.menu_left_create a span {
+  margin-right: 8px;
+}
+.menu_left_all {
+  margin-top: 15px;
+  border-radius: 20px;
+}
+.menu_left_all ul li {
+  list-style: none;
+}
+.menu_left_all ul li a:hover {
+  background-color: #37312B;
+  border-radius: 20px;
+}
+.menu_left_all ul li:hover {
+  cursor: pointer;
+}
+.menu_left_all ul li p {
+  font-family: "Futura PT", sans-serif;
+  color: #fff;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 11px;
+}
+.menu_left_all ul li p span {
+  margin-right: 8px;
+}
+.menu_left_all ul li:focus > ul.menu_left_all_list_sub {
+  display: block;
+}
+.menu_left_all ul li ul {
+  margin-left: 30px;
+  display: none;
+}
+.menu_left_all a {
+  position: relative;
+  font-family: "Futura PT", sans-serif;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 11px;
+}
+.menu_left_all a span {
+  margin-right: 8px;
+}
+.menu_left_all a #qty {
+  background-color: #554e45;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 13px;
+  padding: 6px;
+  text-align: right;
+  position: absolute;
+  right: 0px;
+  top: 7px;
+}
+
+.list_todo {
+  width: 450px;
+  position: absolute;
+  left: 300px;
+}
+.list_todo_search {
+  height: 40px;
+  background-color: #F4F4F4;
+  padding-top: 15px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  border-bottom: 1px solid #DCDCDC;
+}
+.list_todo_search input[type=text] {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  padding-left: 10px;
+  border-radius: 120px;
+  border: 1px solid #CDD6DD;
+}
+.list_todo_search input[type=text]:focus {
+  border: 1px solid #CDD6DD;
+  outline: none;
+}
+.list_todo_search input[type=submit] {
+  background-image: url(../images/search.png);
+  background-size: cover;
+  width: 20px;
+  border: none;
+  position: absolute;
+  right: 21px;
+  top: 25px;
+  height: 20px;
+  background-repeat: no-repeat;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+#wrapper {
+  display: flex;
+}

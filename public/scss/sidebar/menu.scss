@@ -1,0 +1,96 @@
+.menu_left {
+    font : {
+        size :16px;
+    }
+    background-color: #313F46;
+    width: 270px;
+    position: fixed;
+    height: 800px;
+    padding: {
+        left:15px;
+        right: 15px;
+        top:15px;
+    }
+    &_create{
+        a{
+            font-family: 'Futura PT', sans-serif;
+            color: #37312B;
+            display: block;
+            background-color: #fff;
+            border-radius: 20px;
+            text-decoration: none;
+            padding : {
+                left: 15px;
+                top:10px;
+                bottom: 11px;
+            }
+            span{
+                margin-right: 8px;
+            }
+        }   
+    }
+    &_all{
+        margin-top: 15px;
+        border-radius: 20px;
+        ul {
+            li{
+                list-style: none;
+                a:hover{
+                    background-color: #37312B;
+                    border-radius: 20px;
+                }
+                &:hover{
+                    cursor: pointer;
+                }
+                p{
+                    font-family: 'Futura PT', sans-serif;
+                    color:#fff;
+                    padding: {
+                        left: 15px;
+                        top:10px;
+                        bottom: 11px;
+                    }
+                    span{
+                        margin-right: 8px;
+                    }
+                }
+                &:focus > ul.menu_left_all_list_sub{
+                    display: block;              
+                }
+                ul{
+                    margin-left: 30px;
+                    display: none;
+                }
+            }
+        }
+        a{
+            position: relative;
+            font-family: 'Futura PT', sans-serif;
+            color:#fff;
+            display: block;
+            text-decoration: none;
+            padding: {
+                left: 15px;
+                top:10px;
+                bottom: 11px;
+            }
+            span{
+                margin-right: 8px;
+            }
+            #qty{
+                background-color: #554e45;
+                color: #fff;
+                border-radius: 50%;
+                font: {
+                    size:13px;
+
+                }
+                padding:6px;
+                text-align: right;
+                position: absolute;
+                right: 0px;
+                top:7px;
+            }
+        }
+    }
+}
