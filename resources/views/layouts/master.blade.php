@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Todo List</title>
-    <base href="{{url('public/')}}" />
+    <base href="{{url('/')}}" />
     <link rel="stylesheet" href="fontawesome/css/fontawesome.css">
     <link rel="stylesheet" href="fontawesome/css/solid.css">
     <link rel="stylesheet" href="fontawesome/css/brands.css">
