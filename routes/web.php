@@ -11,9 +11,12 @@ use App\User;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/', 'HomeController@index')->middleware('checklogin');
+
 Route::get('/user', function () {
     dd(App\User::all());
 });
+Route::get('/login','UserController@getLoginUser')->name('getlogin');
+Route::post('/login','UserController@checkLoginUser')->name('postlogin');
+Route::get('/register','UserController@getRegister')->name('getRegister');
+Route::post('/register','UserController@postRegister')->name('postRegister');

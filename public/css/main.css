@@ -171,6 +171,7 @@
   background-color: #F4F4F4;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #DCDCDC;
   padding-top: 14px;
   padding-right: 20px;
   padding-bottom: 13px;

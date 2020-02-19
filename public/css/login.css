@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "Futura PT";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Tangerine"), url("../font/futura-pt-medium.otf") format("truetype");
+  }
+*{
+    margin: 0;
+    padding:0;
+    font-family: 'Futura PT Book',sans-serif;
+}
+#wrapper{
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: #9053c7;
+    background: -webkit-linear-gradient(-135deg,#c850c0,#4158d0);
+    background: -o-linear-gradient(-135deg,#c850c0,#4158d0);
+    background: -moz-linear-gradient(-135deg,#c850c0,#4158d0);
+    background: linear-gradient(-135deg,#c850c0,#4158d0);
+}
+.container{
+    width: 50%;
+    margin: 0px auto;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.col-5{
+    display: flex;
+    align-items: center;
+}
+.col-7{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+input[type=email],input[type=password],input[type=submit],input[type=text]{
+    font-family: 'Poppins', sans-serif;
+    width: 390px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666;
+    background: #e6e6e6;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    margin-bottom: 5px;
+    padding-left: 20px;
+}
+input[type=email]:focus,input[type=password]:focus,input[type=text]:focus{
+    border: none;
+    outline: none;
+    -webkit-box-shadow: 0px 0px 20px -5px rgba(87,184,70,1);
+    -moz-box-shadow: 0px 0px 20px -5px rgba(87,184,70,1);
+    box-shadow: 0px 0px 20px -5px rgba(87,184,70,1);
+}
+input[type=submit]{
+    width: 410px !important;
+    background-color: #57b846;
+}
+.title h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
