@@ -9,12 +9,12 @@
         </div>
         <div class="menu_left_all">
             <ul class="menu_left_all_list">
-                <li>
+                <li >
                     <a href="">
-                        <span><i class="fas fa-sticky-note"></i></span>All Notes <span id="qty">10</span>
+                        <span><i class="fas fa-sticky-note"></i></span>All Notes <span class="qty">10</span>
                     </a>
                 </li>
-                <li>
+                <li class="accordion">
                     <p>
                         <span><i class="fas fa-tags"></i></span>Category 
                     </p>
@@ -23,28 +23,28 @@
                             <a href="">
                                 <span><i class="fas fa-tag"></i></span>
                                 Category 1
-                                <span id="qty">10</span>
+                                <span class="qty">10</span>
                             </a>
                         </li>
                         <li tabindex="2">
                             <a href="">
                                 <span><i class="fas fa-tag"></i></span>
                                 Category 2
-                                <span id="qty">10</span>
+                                <span class="qty">10</span>
                             </a>
                         </li>
                         <li>
                             <a href="">
                                 <span><i class="fas fa-tag"></i></span>
                                 Category 3
-                                <span id="qty">10</span>
+                                <span class="qty">10</span>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li>
                     <a href="">
-                        <span><i class="fas fa-paperclip"></i></span>Clip <span id="qty">10</span>
+                        <span><i class="fas fa-paperclip"></i></span>Clip <span class="qty">10</span>
                     </a>
                 </li>
             </ul>
@@ -155,4 +155,21 @@
             </div>
         </div>
     </section>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {           
+            acc[0].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.children[1];               
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+          });
+        }
+    </script>
 @endsection

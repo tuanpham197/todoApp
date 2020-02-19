@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Futura PT";
   font-style: normal;
@@ -37,7 +38,23 @@
   margin-top: 15px;
   border-radius: 20px;
 }
+.menu_left_all ul .accordion {
+  transition: 0.4s;
+}
+.menu_left_all ul .accordion:after {
+  content: "+";
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  margin-left: 5px;
+}
+.menu_left_all ul .active:after {
+  content: "\2212";
+}
 .menu_left_all ul li {
+  position: relative;
   list-style: none;
 }
 .menu_left_all ul li a:hover {
@@ -55,14 +72,17 @@
   padding-bottom: 11px;
 }
 .menu_left_all ul li p span {
-  margin-right: 8px;
+  margin-right: 3px;
 }
 .menu_left_all ul li:focus > ul.menu_left_all_list_sub {
   display: block;
 }
 .menu_left_all ul li ul {
   margin-left: 30px;
-  display: none;
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
 }
 .menu_left_all a {
   position: relative;
@@ -77,7 +97,7 @@
 .menu_left_all a span {
   margin-right: 8px;
 }
-.menu_left_all a #qty {
+.menu_left_all a .qty {
   background-color: #554e45;
   color: #fff;
   border-radius: 50%;
