@@ -4,8 +4,7 @@
     }
     background-color: #313F46;
     width: 270px;
-    position: fixed;
-    height: 800px;
+    min-height: calc(100vh - 15px);
     padding: {
         left:15px;
         right: 15px;
@@ -90,6 +89,19 @@
                 position: absolute;
                 right: 0px;
                 top:7px;
+            }
+        }
+    }
+    &_bottom{
+        position: absolute;
+        bottom: 0;
+        margin-left: 15px;
+        font-family: 'Futura PT', sans-serif;
+        a{
+            color:#fff;
+            text-decoration: none;
+            img{
+                margin-left: 5px;
             }
         }
     }
