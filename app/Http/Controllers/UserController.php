@@ -36,7 +36,7 @@ class UserController extends Controller
     {
         $user = $this->userServices->loginUser($request);
         if($user){
-            return \redirect('/');
+            return \redirect('/user/task');
         }
         else{
             $message = "Please check email and password !!";

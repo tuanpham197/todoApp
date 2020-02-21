@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="fontawesome/css/brands.css">
     <link rel="stylesheet" href="fontawesome/css/regular.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
     <div id="wrapper">

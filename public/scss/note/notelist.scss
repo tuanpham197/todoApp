@@ -79,9 +79,9 @@
                         bottom: 15px;           
                         left: 15px;
                     }
-                    a{
+                    .taskClick{
                         color:#2B3137; 
-                        text-decoration: none;
+                        cursor: pointer;
                         line-height: 22px;
                         #icon:first-child{
                             margin-right: 5px;

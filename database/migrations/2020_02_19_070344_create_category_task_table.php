@@ -17,11 +17,10 @@ class CreateCategoryTaskTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('task_id');
-            $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('task_id')->references('id')->on('task')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            
         });
     }
 

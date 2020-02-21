@@ -11,7 +11,7 @@ use App\User;
 |
 */
 
-Route::get('/', 'HomeController@index')->middleware('checklogin');
+Route::get('/', 'HomeController@index');//->middleware('checklogin')
 
 Route::get('/user', function () {
     dd(App\User::all());
@@ -20,3 +20,11 @@ Route::get('/login','UserController@getLoginUser')->name('getlogin');
 Route::post('/login','UserController@checkLoginUser')->name('postlogin');
 Route::get('/register','UserController@getRegister')->name('getRegister');
 Route::post('/register','UserController@postRegister')->name('postRegister');
+
+Route::group(['prefix' => 'user','middeware'=>'checklogin'], function () {
+    Route::resource('/task','TaskController');
+    Route::group(['prefix' => 'category'], function () {
+        Route::get('/{id}','CategoryController@getTaskByCategory');
+    });
+    
+});
