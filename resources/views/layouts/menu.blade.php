@@ -24,7 +24,6 @@
                                 <span class="qty">{{$item->task_count}}</span>
                             </a>
                         </li>
-                        
                     @endforeach
                 </ul>
             </li>
@@ -32,6 +31,12 @@
                 <a href="">
                     <span><i class="fas fa-paperclip"></i></span>Clip <span class="qty">10</span>
                 </a>
+            </li>
+            <li>
+                <button id="modal">
+                    <span><i class="fas fa-plus"></i></span>
+                    Add Category
+                </button>
             </li>
         </ul>
     </div>
@@ -41,3 +46,22 @@
         </a>
     </div>
 </section>
+<script>
+    function getEle(s){
+        return document.getElementsByClassName(s);
+    }
+    var btn = document.getElementById('modal');
+    
+    btn.addEventListener('click',function(){
+        var modal = getEle('modal');
+        modal[0].style.display = "block"; 
+        modal[0].classList.add('show');
+        var btnClose = document.getElementsByClassName('close');
+        var t = [...btnClose];
+        t[0].addEventListener('click',function(){
+            var modal = getEle('modal');
+            modal[0].style.display = "none";
+            modal[0].classList.remove('show');
+        })
+    })
+</script>
