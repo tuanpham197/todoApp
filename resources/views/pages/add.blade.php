@@ -4,7 +4,7 @@
     
     @include('layouts.menu')
     @include('layouts.listtask')
-    @include('pages.detail')
+    @include('pages.form')
     
    
 @endsection

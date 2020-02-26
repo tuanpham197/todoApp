@@ -1,6 +1,6 @@
 <section class="menu_left">
     <div class="menu_left_create">
-        <a href="">
+        <a href="{{route('add.task')}}">
             <span><i class="fas fa-plus"></i></span>Create New
         </a>
     </div>

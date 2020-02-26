@@ -13,9 +13,9 @@ use App\User;
 
 Route::get('/', 'HomeController@index')->middleware('checklogin');
 
-Route::get('/user', function () {
-    dd(App\User::all());
-});
+// Route::get('/user', function () {
+//     dd(App\User::all());
+// });
 Route::get('/login','UserController@getLoginUser')->name('getlogin');
 Route::post('/login','UserController@checkLoginUser')->name('postlogin');
 Route::get('/register','UserController@getRegister')->name('getRegister');
@@ -26,6 +26,17 @@ Route::group(['prefix' => 'user','middeware'=>'checklogin'], function () {
     Route::group(['prefix' => 'category'], function () {
         Route::get('/{id}','CategoryController@getTaskByCategory');
         Route::post('/add','CategoryController@addCategory')->name('addCategory');
+        Route::post('/','CategoryController@findCategoryByName');
+    });
+    Route::get('ts',function(){
+        dd("test");
+    });
+    Route::group(['prefix' => 'tasks'], function () {
+        Route::get('/add','TaskController@getAddTask')->name('add.task');
+        
     });
     
+});
+Route::get('/test',function(){
+    return "Aaaa";
 });

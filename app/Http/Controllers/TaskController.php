@@ -91,4 +91,9 @@ class TaskController extends Controller
     {
         //
     }
+
+    public function getAddTask()
+    {
+        return view('pages.add');
+    }
 }

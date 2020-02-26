@@ -17,11 +17,17 @@ class CategoryController extends Controller
     public function getTaskByCategory($category_id)
     {
         $arrTask = $this->taskServices->getTaskByCategory($category_id);
-        return view('pages.detail',\compact('arrTask'));
+        return view('pages.index',\compact('arrTask'));
     }
     public function addCategory(CategoryRequest $request)
     {
         $category = $this->categoryServices->addCategory($request);
         return redirect('/');
+    }
+    public function findCategoryByName(Request $request)
+    {
+        $key = $request->key;
+        $arrCate = $this->categoryServices->findCategoryByName($key);
+        return $arrCate;
     }
 }

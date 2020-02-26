@@ -18,6 +18,10 @@ class CategoryServices
         $input = $request->all();
         $input["user_id"] = Auth::user()->id;
         return Category::create($input);
-
+    }
+    public function findCategoryByName($name)
+    {
+        $arrCategory = Category::where('name', 'LIKE', "%$name%")->get();
+        return $arrCategory;
     }
 }
