@@ -75,6 +75,8 @@
     })
     $("form").submit(function(e){
         e.preventDefault();
+        var data = $('form').serializeArray();
+        console.log(data);
         
         
     });
