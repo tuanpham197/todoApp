@@ -1,10 +1,12 @@
 .list_todo{
     position: relative;
     width: 450px;
+    overflow-y: scroll;
+    height: calc(100vh - 2px);
     border: 1px solid #DCDCDC{
         top: 2px solid #DCDCDC;
         left: none;
-    }
+    };
     &_search{
         height: 40px;
         background-color: #F4F4F4;

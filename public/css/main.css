@@ -151,6 +151,8 @@
 .list_todo {
   position: relative;
   width: 450px;
+  overflow-y: scroll;
+  height: calc(100vh - 2px);
   border: 1px solid #DCDCDC;
   border-top: 2px solid #DCDCDC;
   border-left: none;

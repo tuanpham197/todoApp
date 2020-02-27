@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Services\TaskServices;
 use App\Services\CategoryServices;
+use App\Http\Requests\TaskRequest;
 
 class TaskController extends Controller
 {
@@ -39,9 +41,19 @@ class TaskController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TaskRequest $request)
     {
         //
+        $task = $this->taskServices->addTask($request);
+        if(!empty($task)){
+            $arrTask = $this->taskServices->findTaskByUser(Auth::user()->id);
+            $message = "Create is successfully";
+            return view('pages.add',compact(['arrTask','message']));
+        }
+        else{
+            $message = "Create is  fails";
+            return view('pages.add',compact('message'));
+        }
     }
 
     /**
@@ -95,5 +107,19 @@ class TaskController extends Controller
     public function getAddTask()
     {
         return view('pages.add');
+    }
+
+    public function addTask(TaskRequest $request)
+    {
+        $task = $this->taskServices->addTask($request);
+        if(!empty($task)){
+            $arrTask = $this->taskServices->findTaskByUser(Auth::user()->id);
+            $message = "Create is successfully";
+            return view('pages.add',compact(['arrTask','message']));
+        }
+        else{
+            $message = "Create is  fails";
+            return view('pages.add',compact('message'));
+        }
     }
 }

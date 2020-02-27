@@ -11,9 +11,25 @@
     <link rel="stylesheet" href="fontawesome/css/brands.css">
     <link rel="stylesheet" href="fontawesome/css/regular.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/jquery-3.4.1.min.js"></script>
+    <style>
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background-color: #ebebeb;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
 
-          
+        ::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: #6d6d6d; 
+        }
+    </style>
+    <script src="js/jquery-3.4.1.min.js"></script>         
     <script>
         function validateForm(){
             var x = document.getElementById("namecate").value;

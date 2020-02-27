@@ -1,17 +1,29 @@
-<section class="add__task">
+<section class="add__task" id="task-detail">
     <div class="add__task__header">
         <h2>Add Task</h2>
     </div>
     <div class="add__task__content">
-        <form action="" method="post" >
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        @isset($message)
+            {{$message}}
+        @endisset
+        <form action="{{route('post.task')}}" method="post" >
             @csrf
             <div class="form-group">
                 <label for="">Title</label>
-                <input type="text" name="title">
+                <input type="text" name="title" value=" ">
             </div>
             <div class="form-group">
                 <label for="">Content</label>
-                <textarea name="content" id="" cols="30" rows="10"></textarea>
+                <textarea name="content" id="" cols="30" rows="10" ></textarea>
             </div>
             <div class="form-group">
                 <label for="">Category</label>
@@ -22,10 +34,6 @@
                     </ul>
                 </div>
                 <button id="destroy">destroy</button>
-                <button id="add">add tags</button>
-                <button id="addArr">add tags array</button>
-                <button id="clear">clear tags</button>
-                <button id="get">get taggs</button>
             </div>
             <div class="form-group">
                 <input type="submit" value="Add" >
@@ -73,11 +81,4 @@
         };
 
     })
-    $("form").submit(function(e){
-        e.preventDefault();
-        var data = $('form').serializeArray();
-        console.log(data);
-        
-        
-    });
 </script>

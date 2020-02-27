@@ -11,7 +11,7 @@ class Task extends Model
     protected $fillable = [
         'title',
         'content',
-        'clip'
+        'user_id'
     ];
 
    
