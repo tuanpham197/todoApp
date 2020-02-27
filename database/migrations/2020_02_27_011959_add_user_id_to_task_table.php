@@ -30,8 +30,8 @@ class AddUserIdToTaskTable extends Migration
     {
         Schema::table('task', function (Blueprint $table) {
             //
-            $table->dropForeign('user_id');
-            $table->dropColumn('user_id');
+            //$table->dropForeign('user_id');
+            //$table->dropColumn('user_id');
         });
     }
 }
