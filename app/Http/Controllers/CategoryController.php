@@ -22,7 +22,6 @@ class CategoryController extends Controller
     public function addCategory(CategoryRequest $request)
     {
         $category = $this->categoryServices->addCategory($request);
-        dd($category);
         return redirect('/');
     }
     public function findCategoryByName(Request $request)
