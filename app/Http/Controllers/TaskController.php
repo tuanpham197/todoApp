@@ -46,8 +46,9 @@ class TaskController extends Controller
         //
         $task = $this->taskServices->addTask($request);
         if(!empty($task)){
-            $arrTask = $this->taskServices->findTaskByUser(Auth::user()->id);
-            $message = "Create is successfully";
+            $arrTask     = $this->taskServices->findTaskByUser(Auth::user()->id);
+            //$arrCategory = $this->categoryServices->findCategory(Auth::user()->id);
+            $message     = "Create is successfully";
             return view('pages.add',compact(['arrTask','message']));
         }
         else{

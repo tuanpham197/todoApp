@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Services\TaskServices;
 use App\Services\CategoryServices;
+use App\Services\UserServices;
+use Illuminate\Support\Facades\Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,12 +28,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // 
         $cate = new CategoryServices();
         $task = new TaskServices();
-        $arrCategory = $cate->findCategory(2,1);
-        $arrTask     = $task->findTaskByUser(1);
-        $taskLastest = $task->getTaskLatest(1);
+        $ob = new UserServices();
+        $arrCategory = $cate->findCategory($ob->getIdUser());
+        $arrTask     = $task->findTaskByUser($ob->getIdUser());
+        $taskLastest = $task->getTaskLatest($ob->getIdUser());
         View::share(['arrCategory' => $arrCategory, 'arrTask' => $arrTask,'task'=>$taskLastest]);
+    
+        
     }
 }

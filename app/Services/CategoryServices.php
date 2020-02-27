@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class CategoryServices
 {
-    public function findCategory($id,$user_id)
+    public function findCategory($user_id)
     {
         $arrCategory = Category::withCount('task')->where('user_id',$user_id)->get();
         return $arrCategory;

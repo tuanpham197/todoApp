@@ -26,4 +26,8 @@ class UserServices
     {
         
     }
+    public function getIdUser()
+    {
+        return 2;
+    }
 }
