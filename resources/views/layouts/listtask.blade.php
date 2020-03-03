@@ -12,8 +12,8 @@
         </div>
         <div class="list_todo_boxList_task">
             @foreach ($arrTask as $item)
-                <div class="list_todo_boxList_task_item active">
-                    <div class="list_todo_boxList_task_item_content clip ">
+            <div class="list_todo_boxList_task_item" id="task-{{$item->id}}">
+                    <div class="list_todo_boxList_task_item_content {{$item->clip ==1 ? "clip" : ""}} ">
                         <div class="taskClick" data-id="{{$item->id}}">
                             <h4>{{$item->title}}</h4>
                             <p><span id="icon"><i class="far fa-clock"></i></span>2020/01/27 <span id="icon"><i class="fas fa-tag"></i></span>{{$item->category[0]->name}}</p>

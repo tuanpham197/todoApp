@@ -16,14 +16,14 @@ class TaskServices
     {
         $task = Task::whereHas('category',function($query) use ($user_id){
             $query->where("user_id",'=',$user_id);
-        })->with('category')->orderBy('created_at','desc')->first();
+        })->with('category')->where('public',1)->orderBy('created_at','desc')->first();
         return $task;
     }
     public function findTaskByUser($user_id)
     {
         $arr = Task::whereHas('category',function($query) use ($user_id){
             $query->where("user_id",'=',$user_id);
-        })->with('category')->get();     
+        })->with('category')->where('public',1)->get();     
         return $arr;
     }
     public function getTaskByCategory($id)
@@ -82,5 +82,52 @@ class TaskServices
             $this->addTaskAndCategory($arrCate,$task->id);
         }
         return $task;
+    }
+    public function deleteTaskAndCate($id)
+    {
+        $deletedRows = TaskCategory::where('task_id', $id)->delete();
+        return $deletedRows;
+    }
+    public function updateTask($request,$id)
+    {
+        $input = $request->only(['title', 'content','tag-2','_token']);
+        $task = Task::findOrFail($id);
+        $task->title = $input['title'];
+        $task->content = $input['content'];
+        $task->save();
+        $this->deleteTaskAndCate($id);
+        if(!empty($input['tag-2'])){
+            $arrCate = $this->addCategory($input['tag-2'],$input["_token"]);
+            $this->addTaskAndCategory($arrCate,$id);
+        }
+        return $task;
+    }
+    public function updateClip($request)
+    {
+        $task = Task::findOrFail($request->key);
+        if($task->clip == 0){
+            $task->clip = 1;
+        }else{
+            $task->clip = 0;
+        }
+        $task->save();
+        return $task;
+    }
+    public function deleteTask($id)
+    {
+        $task = Task::findOrFail($id);
+        if($task->clip == 1)
+            return false;
+        $task->public = 0;
+        return $task->save();
+    }
+    public function getTaskIsDelete($user_id)
+    {
+        
+        $arrTask = Task::where([
+            ['public','=',0],
+            ['user_id','=',$user_id]
+        ])->get(); 
+        return $arrTask;
     }
 }

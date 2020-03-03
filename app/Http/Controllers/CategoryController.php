@@ -6,6 +6,7 @@ use App\Services\TaskServices;
 use App\Services\CategoryServices;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {

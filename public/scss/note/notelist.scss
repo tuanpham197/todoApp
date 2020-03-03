@@ -93,6 +93,34 @@
                             margin-left: 5px;
                         }
                     }
+                    .action{
+                        display: flex;
+                        justify-content: space-between;
+                        .btnAction{
+                            display: flex;
+                            align-items: center;
+                            a{
+                                border: 1px solid #ccc;
+                                padding: 3px 10px;
+                                border-radius: 25px;
+                                text-decoration: none;
+                                color: #333;
+                            }
+                            a:last-child:hover{
+                                background-color: #FF4136;
+                                border: 1px solid #FF4136;
+                                color: #fff;
+                            }
+                            a:first-child{
+                                margin-right: 5px;
+                            }
+                            a:first-child:hover{
+                                background-color: #0074D9;
+                                border: 1px solid #0074D9;
+                                color: #fff;
+                            }
+                        }
+                    }
                     p{
                         font: {
                             family : 'Futura PT Book',sans-serif;

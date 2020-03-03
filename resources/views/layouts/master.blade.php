@@ -92,38 +92,78 @@
                 } 
           });
         }
+        function clipAdd(a)
+        {
+            event.preventDefault();
+            var clip = document.getElementById('clipDetail');
+ 
+            var id = a.getAttribute('data-id');
+            
+            $.ajax({
+                type: 'POST',
+                url : '/user/tasks/clip',
+                data: {
+                        "_token": "{{ csrf_token() }}",
+                        "key" : id
+                    },
+                success:function(data){
+                    
+                    var tgId = 'task-'+id;
+                    var tag = document.getElementById(tgId);
+                    
+                    if(data.clip===1){
+                        tag.children[0].classList.add('clip');
+                    }
+                    else{
+                        tag.children[0].classList.remove('clip');
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function(){
+            
+        })
     </script>
     <script>
         $(document).ready(function(){
             var arrElement = document.getElementsByClassName('taskClick');
             for (i = 0; i < arrElement.length; i++) {           
                 arrElement[i].addEventListener("click", function() {
+                    // console.log(this.parentElement);
+                    // this.parentElement.
                     var id = $(this).attr("data-id");
                     $.ajax({
                         type:'GET',
                         url:'user/task/'+id,
                         success:function(data) { 
                             var date =  data.created_at.split(' ');
+                            <?php $message = "" ?>
                             var str = `
                                 <div class="detail_todo_option">
                                     <div class="detail_todo_option_left">
-                                        <a href="">
+                                        <a href="user/tasks/update/${data.id}">
                                             <img src="images/pen-solid.png" alt="">Edit
                                         </a>
                                         <a href="">
                                             <img src="images/save-solid.png" alt="">Save
                                         </a>
-                                        <a href="" id="clipDetail">
+                                        <a href="#" id="clipDetail" data-id=${data.id} onclick="clipAdd(this)">
                                             <img src="images/paperclip-solid.png" alt="">Clip
                                         </a>
                                     </div>
                                     <div class="detail_todo_option_right">
-                                        <a href="">
+                                        <a href="user/tasks/delete/${data.id}">
                                             <img src="images/trash-solid.png" alt="">Delete
                                         </a>
                                     </div>
                                 </div>
                                 <div class="detail_todo_content">
+                                    <div class="message">
+                                        @isset($message)
+                                            {{$message}}
+                                        @endisset
+                                    </div>
                                     <div class="detail_todo_content_title">
                                         <div class="detail_todo_content_title_info">
                                             <p><span id="icon"><i class="far fa-clock"></i></span> ${date[0]}<span id="icon"><i class="fas fa-tag"></i></span>${data.category[0].name}</p>
@@ -175,6 +215,8 @@
             slug.value = text;
         };
         
+        
+
     </script>
 
     <script src="js/tag.js"></script>

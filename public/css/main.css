@@ -233,6 +233,34 @@
   margin-right: 5px;
   margin-left: 5px;
 }
+.list_todo_boxList_task_item_content .action {
+  display: flex;
+  justify-content: space-between;
+}
+.list_todo_boxList_task_item_content .action .btnAction {
+  display: flex;
+  align-items: center;
+}
+.list_todo_boxList_task_item_content .action .btnAction a {
+  border: 1px solid #ccc;
+  padding: 3px 10px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #333;
+}
+.list_todo_boxList_task_item_content .action .btnAction a:last-child:hover {
+  background-color: #FF4136;
+  border: 1px solid #FF4136;
+  color: #fff;
+}
+.list_todo_boxList_task_item_content .action .btnAction a:first-child {
+  margin-right: 5px;
+}
+.list_todo_boxList_task_item_content .action .btnAction a:first-child:hover {
+  background-color: #0074D9;
+  border: 1px solid #0074D9;
+  color: #fff;
+}
 .list_todo_boxList_task_item_content p {
   font-family: "Futura PT Book", sans-serif;
   font-size: 13px;
@@ -340,12 +368,46 @@
   color: #2B3137;
   border-bottom: 1px solid #F0F0F0;
 }
+.detail_todo_content_title_text input {
+  width: 100%;
+  font-family: "Futura PT Book", sans-serif;
+  font-size: 16px;
+}
+.detail_todo_content_title_text input:focus {
+  outline: none;
+}
 .detail_todo_content_text {
   font-family: "Futura PT Book", sans-serif;
   font-size: 16px;
   margin-left: 40px;
   margin-top: 21.5px;
   margin-right: 33.5px;
+}
+.detail_todo_content_text textarea {
+  width: 93%;
+  border: none;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+}
+.detail_todo_content_text textarea:focus {
+  outline: none;
+}
+.detail_todo_content_text #recommend-tag {
+  display: none;
+  margin-bottom: 15px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #ddd;
+  width: 97.6%;
+  margin-top: -15px;
+}
+.detail_todo_content_text #recommend-tag ul li {
+  list-style: none;
 }
 
 .modal {

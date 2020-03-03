@@ -34,6 +34,12 @@ Route::group(['prefix' => 'user','middeware'=>'checklogin'], function () {
     Route::group(['prefix' => 'tasks'], function () {
         Route::get('/add','TaskController@getAddTask')->name('add.task');
         Route::post('/add','TaskController@addTask')->name('post.task');
+        Route::get('/update/{id}','TaskController@getUpdate')->name('get.update');
+        Route::post('/clip','TaskController@updateClip');
+        Route::get('/delete/{id}','TaskController@deleteTask');
+        Route::get('/get-task-is-delete','TaskController@getTaskIsDeleted');
+
+        
     });
     
 });

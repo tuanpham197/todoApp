@@ -29,13 +29,20 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // 
-        $cate = new CategoryServices();
-        $task = new TaskServices();
-        $ob = new UserServices();
-        $arrCategory = $cate->findCategory($ob->getIdUser());
-        $arrTask     = $task->findTaskByUser($ob->getIdUser());
-        $taskLastest = $task->getTaskLatest($ob->getIdUser());
-        View::share(['arrCategory' => $arrCategory, 'arrTask' => $arrTask,'task'=>$taskLastest]);
+        View::composer('*', function($view)
+        {
+            if (Auth::check()){
+                $id = Auth::user()->id;
+                $cate = new CategoryServices();
+                $task = new TaskServices();
+                $ob = new UserServices();
+                $arrCategory = $cate->findCategory($id);
+                $arrTask     = $task->findTaskByUser($id);
+                $taskLastest = $task->getTaskLatest($id);
+                View::share(['arrCategory' => $arrCategory, 'arrTask' => $arrTask,'task'=>$taskLastest]);
+            }
+        });
+        
     
         
     }

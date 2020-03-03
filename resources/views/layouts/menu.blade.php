@@ -8,7 +8,7 @@
         <ul class="menu_left_all_list">
             <li >
                 <a href="user/task">
-                    <span><i class="fas fa-sticky-note"></i></span>All Notes <span class="qty">10</span>
+                    <span><i class="fas fa-sticky-note"></i></span>All Notes <span class="qty">{{count($arrTask)}}</span>
                 </a>
             </li>
             <li class="accordion">
@@ -41,7 +41,7 @@
         </ul>
     </div>
     <div class="menu_left_bottom">
-        <a href="">
+        <a href="user/tasks/get-task-is-delete">
             <img src="images/trash-solid.png" alt=""> Delete
         </a>
     </div>
@@ -51,7 +51,7 @@
         return document.getElementsByClassName(s);
     }
     var btn = document.getElementById('modal');
-    
+
     btn.addEventListener('click',function(){
         var modal = getEle('modal');
         modal[0].style.display = "block"; 

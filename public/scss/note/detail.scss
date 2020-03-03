@@ -100,6 +100,15 @@
                 }
                 color:#2B3137;
                 border-bottom:1px solid #F0F0F0;
+
+                input{
+                    width: 100%;
+                    font-family: 'Futura PT Book',sans-serif;
+                    font-size: 16px;
+                }input:focus{
+                    outline: none;
+                }
+                
             }
         }
         &_text{
@@ -111,6 +120,35 @@
                 left: 40px;
                 top:  21.5px;
                 right: 33.5px;
+            }
+            textarea{
+                width: 93%;
+                border: none;
+                font-size: 16px;
+                border-bottom: 1px solid #eee;
+                padding: {
+                    left: 15px;
+                    top:15px;
+                    right: 15px;
+                    bottom: 5px;
+                }
+            }
+            textarea:focus{
+                outline: none;
+            }
+            #recommend-tag{
+                display: none;
+                margin-bottom: 15px;
+                border-left: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+                background-color: #ddd;
+                width: 97.6%;
+                margin-top: -15px;
+                ul li{
+                    list-style: none;
+                }
+            
             }
         }
     }

@@ -46,10 +46,8 @@ class TaskController extends Controller
         //
         $task = $this->taskServices->addTask($request);
         if(!empty($task)){
-            $arrTask     = $this->taskServices->findTaskByUser(Auth::user()->id);
-            //$arrCategory = $this->categoryServices->findCategory(Auth::user()->id);
             $message     = "Create is successfully";
-            return view('pages.add',compact(['arrTask','message']));
+            return view('pages.add',compact(['message']));
         }
         else{
             $message = "Create is  fails";
@@ -92,6 +90,7 @@ class TaskController extends Controller
     public function update(Request $request, $id)
     {
         //
+        return $this->taskServices->updateTask($request,$id);
     }
 
     /**
@@ -122,5 +121,42 @@ class TaskController extends Controller
             $message = "Create is  fails";
             return view('pages.add',compact('message'));
         }
+    }
+    public function getUpdate($id)
+    {
+        $task = $this->taskServices->getDetailTask($id);
+        $str = "";
+        $len = count($task->category);
+        $i=0;
+        if($len >0){
+            foreach($task->category as $item){
+
+                if($i<$len-1)
+                    $str = $str.$item->name.",";
+                else
+                    $str = $str.$item->name;
+    
+                $i++;
+            }
+        }
+        return view('pages.update',compact(['task','str']));
+    }
+    public function updateClip(Request $request)
+    {
+        return $this->taskServices->updateClip($request);
+    }
+    public function deleteTask($id)
+    {
+        if($this->taskServices->deleteTask($id) == true)
+            return  redirect('/');
+        else{
+            $message = "Delete is fail, you must unenable clip before delete task.";
+            return view('pages.index',compact('message'));
+        }    
+    }
+    public function getTaskIsDeleted()
+    {
+        $arrTask = $this->taskServices->getTaskIsDelete(Auth::user()->id);
+        return view('pages.task-delete',compact('arrTask'));
     }
 }
