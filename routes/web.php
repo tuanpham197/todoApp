@@ -28,9 +28,6 @@ Route::group(['prefix' => 'user','middeware'=>'checklogin'], function () {
         Route::post('/add','CategoryController@addCategory')->name('addCategory');
         Route::post('/','CategoryController@findCategoryByName');
     });
-    Route::get('ts',function(){
-        dd("test");
-    });
     Route::group(['prefix' => 'tasks'], function () {
         Route::get('/add','TaskController@getAddTask')->name('add.task');
         Route::post('/add','TaskController@addTask')->name('post.task');
@@ -38,7 +35,7 @@ Route::group(['prefix' => 'user','middeware'=>'checklogin'], function () {
         Route::post('/clip','TaskController@updateClip');
         Route::get('/delete/{id}','TaskController@deleteTask');
         Route::get('/get-task-is-delete','TaskController@getTaskIsDeleted');
-
+        Route::post('/search','TaskController@searchTask');
         
     });
     

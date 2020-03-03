@@ -130,4 +130,12 @@ class TaskServices
         ])->get(); 
         return $arrTask;
     }
+    public function searchTask($key,$user_id)
+    {
+        return Task::where([
+            ['title', 'LIKE', "%$key%"],
+            ['user_id','=',$user_id],
+            ['public','=',1]
+        ])->with('category')->get();
+    }
 }

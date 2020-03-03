@@ -75,9 +75,37 @@
                 </div>
             </div>
         </div>
-    
+        <!-- Delete -->
+        <div class="modal-delete">
+            <div class="modal-delete__body">
+                <div class="modal-delete__body__header">
+                    <h5>Confirm delete task.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-delete__body__content">
+                    <h5>Ban co chan chan xoa task khong ?</h5>
+                    <div class="modal-delete__body__content__btn">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script>
+        function splitStr(arr)
+        {
+            var str = "";
+            for(var i=0;i<arr.length;i++){
+                if(i>=3)
+                {
+                    break;
+                }     
+                str += arr[i].name +",";
+            }
+            return str.substring(0, str.length - 1);
+        }
         var acc = document.getElementsByClassName("accordion");
         var i;
         
@@ -120,73 +148,112 @@
                 }
             });
         }
+        function hiddenModal()
+        {
+            var modal = document.getElementsByClassName('modal-delete');    
+            modal[0].classList.remove('ind');
 
-        $(document).ready(function(){
+
+            modal[0].style.opacity = 0;
             
-        })
+        }
+        function cancelBtn()
+        {
+            hiddenModal(); 
+        }
+        // handle btn delete
+        function deleteBtn(e)
+        {
+            event.preventDefault();
+
+            // handle show div when click
+            var modal = document.getElementsByClassName('modal-delete');
+            modal[0].style.opacity = 1;
+            modal[0].classList.add('ind');
+            
+
+            // handle append html tag a
+            var id = e.getAttribute('data-id');
+            var tag = document.getElementsByClassName('modal-delete__body__content__btn');
+            tag[0].innerHTML = '';
+            var str = `<a href="user/tasks/delete/${id}">Delete</a>
+                        <button onclick="cancelBtn(this)" >Cancel</button>`;
+            tag[0].innerHTML = str;
+            
+        }
     </script>
     <script>
-        $(document).ready(function(){
-            var arrElement = document.getElementsByClassName('taskClick');
-            for (i = 0; i < arrElement.length; i++) {           
-                arrElement[i].addEventListener("click", function() {
-                    // console.log(this.parentElement);
-                    // this.parentElement.
-                    var id = $(this).attr("data-id");
-                    $.ajax({
-                        type:'GET',
-                        url:'user/task/'+id,
-                        success:function(data) { 
-                            var date =  data.created_at.split(' ');
-                            <?php $message = "" ?>
-                            var str = `
-                                <div class="detail_todo_option">
-                                    <div class="detail_todo_option_left">
-                                        <a href="user/tasks/update/${data.id}">
-                                            <img src="images/pen-solid.png" alt="">Edit
-                                        </a>
-                                        <a href="">
-                                            <img src="images/save-solid.png" alt="">Save
-                                        </a>
-                                        <a href="#" id="clipDetail" data-id=${data.id} onclick="clipAdd(this)">
-                                            <img src="images/paperclip-solid.png" alt="">Clip
-                                        </a>
-                                    </div>
-                                    <div class="detail_todo_option_right">
-                                        <a href="user/tasks/delete/${data.id}">
-                                            <img src="images/trash-solid.png" alt="">Delete
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="detail_todo_content">
-                                    <div class="message">
-                                        @isset($message)
-                                            {{$message}}
-                                        @endisset
-                                    </div>
-                                    <div class="detail_todo_content_title">
-                                        <div class="detail_todo_content_title_info">
-                                            <p><span id="icon"><i class="far fa-clock"></i></span> ${date[0]}<span id="icon"><i class="fas fa-tag"></i></span>${data.category[0].name}</p>
-                                        </div>
-                                        <div class="detail_todo_content_title_text">
-                                            <h2>${data.title}</h2>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="detail_todo_content_text">
-                                        <p>
-                                            ${data.content}
-                                        </p>
-                                    </div>
-                                </div>
-                            `;
-                            $('#task-detail').html(str);
-                        }
-                    });
-                });
-            }
-            
+        var t = document.getElementById('close');
+        t.addEventListener('click',function(){
+            hiddenModal();    
         })
+        function handleDetail()
+        {
+            $(document).ready(function(){
+                var arrElement = document.getElementsByClassName('taskClick');
+                
+                for (i = 0; i < arrElement.length; i++) {           
+                    arrElement[i].addEventListener("click", function() {
+                        // console.log(this.parentElement);
+                        // this.parentElement.
+                        var id = $(this).attr("data-id");
+                        $.ajax({
+                            type:'GET',
+                            url:'user/task/'+id,
+                            success:function(data) { 
+                                console.log(data);
+                                
+                                var date =  data.created_at.split(' ');
+                                <?php $message = "" ?>
+                                var str = `
+                                    <div class="detail_todo_option">
+                                        <div class="detail_todo_option_left">
+                                            <a href="user/tasks/update/${data.id}">
+                                                <img src="images/pen-solid.png" alt="">Edit
+                                            </a>
+                                            <a href="">
+                                                <img src="images/save-solid.png" alt="">Save
+                                            </a>
+                                            <a href="#" id="clipDetail" data-id=${data.id} onclick="clipAdd(this)">
+                                                <img src="images/paperclip-solid.png" alt="">Clip
+                                            </a>
+                                        </div>
+                                        <div class="detail_todo_option_right">
+                                            <a href="user/tasks/delete/${data.id}" onclick="deleteBtn(this)" data-id="${data.id}">
+                                                <img src="images/trash-solid.png" alt="">Delete
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="detail_todo_content">
+                                        <div class="message">
+                                            @isset($message)
+                                                {{$message}}
+                                            @endisset
+                                        </div>
+                                        <div class="detail_todo_content_title">
+                                            <div class="detail_todo_content_title_info">
+                                                <p><span id="icon"><i class="far fa-clock"></i></span> ${date[0]}<span id="icon"><i class="fas fa-tag"></i></span>${splitStr(data.category)}</p>
+                                            </div>
+                                            <div class="detail_todo_content_title_text">
+                                                <h2>${data.title}</h2>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="detail_todo_content_text">
+                                            <p>
+                                                ${data.content}
+                                            </p>
+                                        </div>
+                                    </div>
+                                `;
+                                $('#task-detail').html(str);
+                            }
+                        });
+                    });
+                } 
+            });
+        }
+       handleDetail();
     </script>
     <script>
         function charConvert(str) {
@@ -216,7 +283,40 @@
         };
         
         
+    var search = document.getElementById('search');
+    search.oninput = function(){
+        var key = search.value;
+        $.ajax({
+            type : "POST",
+            url : "user/tasks/search",
+            data: {
+                "_token": "{{ csrf_token() }}",
+                "key" : key
+            },
+            success : function(data){
+                var str = "";
+                var i=0;
+                data.forEach(element => {
+                    var date = element.created_at.split(' ');
+                    str = str + `
+                    <div class="list_todo_boxList_task_item" id="task-${element.id}">
+                        <div class="list_todo_boxList_task_item_content ${element.clip === 1 ? "clip" : ""} ">
+                            <div class="taskClick" data-id="${element.id}">
+                                <h4>${element.title}</h4>
+                                <p><span id="icon"><i class="far fa-clock"></i></span>${date[0]} <span id="icon"><i class="fas fa-tag"></i></span>${splitStr(element.category)}</p>
+                            </div>
+                        </div>
+                    </div>
+                    `;    
+                });
 
+                var box = document.getElementsByClassName('list_todo_boxList_task');
+                box[0].innerHTML = str;
+                handleDetail();
+            }
+        });
+    }
+        
     </script>
 
     <script src="js/tag.js"></script>

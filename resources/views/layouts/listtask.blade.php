@@ -1,7 +1,7 @@
 <section class="list_todo">
     <div class="list_todo_search">
         <form action="" method="post">
-            <input type="text" placeholder="キーワードを入力">
+            <input type="text" placeholder="キーワードを入力"  id="search">
             <input type="submit" value="">
         </form>
     </div>

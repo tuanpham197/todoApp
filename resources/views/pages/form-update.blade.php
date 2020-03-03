@@ -13,7 +13,7 @@
             </a>
         </div>
         <div class="detail_todo_option_right">
-            <a href="user/tasks/delete/{{$task->id}}">
+            <a href="user/tasks/delete/{{$task->id}}" onclick="deleteBtn(this)" data-id="{{$task->id}}">
                 <img src="images/trash-solid.png" alt="">Delete
             </a>
         </div>

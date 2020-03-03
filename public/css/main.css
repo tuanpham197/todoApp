@@ -479,6 +479,77 @@
   color: #fff;
 }
 
+.modal-delete {
+  font-family: "Futura PT Book", sans-serif;
+  opacity: 0;
+  transition: opacity 0.1s linear;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.3);
+}
+.modal-delete.ind {
+  z-index: 1;
+}
+.modal-delete__body {
+  width: 40%;
+  margin: 0px auto;
+  background-color: #fff;
+  max-height: 150px;
+  margin-top: 100px;
+}
+.modal-delete__body__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+.modal-delete__body__header h5 {
+  font-size: 20px;
+}
+.modal-delete__body__header button {
+  background: transparent;
+  border: none;
+}
+.modal-delete__body__header span {
+  font-size: 25px;
+  cursor: pointer;
+}
+.modal-delete__body__content {
+  padding: 15px;
+}
+.modal-delete__body__content h5 {
+  font-size: 16px;
+}
+.modal-delete__body__content__btn {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: right;
+}
+.modal-delete__body__content__btn a {
+  text-decoration: none;
+}
+.modal-delete__body__content__btn a:first-child {
+  padding: 7px 10px;
+  width: 70px;
+  border: 1px solid #FF4136;
+  border-radius: 15px;
+  background-color: #FF4136;
+  color: #fff;
+}
+.modal-delete__body__content__btn button {
+  cursor: pointer;
+  padding: 7px 10px;
+  width: 70px;
+  border: 1px solid #0074D9;
+  border-radius: 15px;
+  background-color: #0074D9;
+  color: #fff;
+}
+
 .add__task {
   width: calc(100% - 750px);
   box-sizing: border-box;

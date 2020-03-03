@@ -159,4 +159,8 @@ class TaskController extends Controller
         $arrTask = $this->taskServices->getTaskIsDelete(Auth::user()->id);
         return view('pages.task-delete',compact('arrTask'));
     }
+    public function searchTask(Request $request)
+    {
+        return $this->taskServices->searchTask($request->key,Auth::user()->id);
+    }
 }
