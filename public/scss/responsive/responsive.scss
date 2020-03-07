@@ -1,10 +1,20 @@
 @media screen and (max-width: 480px) {
     
-  }
-@media screen and (max-width: 768px) {
+  
+}
+@media screen and (min-width: 320px) {
+    .main{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+  
+}
+
+@media screen and (max-width: 992px) {
     .menu_left {
         width: 150px;
-        height: calc(100vh - 0px);
+        height: calc(100vh - 15px);
     }
     .list_todo {
         width: 310px;
@@ -23,5 +33,27 @@
     }
     .menu_left{
         font-size: 14px;
+    }
+    .qty{
+        display: none;
+    }
+}
+@media screen and (max-width: 1120px ) {
+    .hidd{
+        display: none;
+    }
+    .detail_todo_option_right a {
+        padding: 10px 10px;
+    }
+    .detail_todo_option_left a {
+        padding: 10px 10px;
+    }
+    .detail_todo_option_right a img {
+        margin-right: 0px;
+    }
+    .detail_todo_option_left a img {
+        width: 17px;
+        height: 17px;
+        margin-right: 0px;
     }
 }

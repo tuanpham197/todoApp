@@ -42,7 +42,7 @@
     </div>
     <div class="menu_left_bottom">
         <a href="user/tasks/get-task-is-delete">
-            <img src="images/trash-solid.png" alt=""> Delete
+            <img src="images/trash-solid.png" alt=""> <span class="tag-mobie">Delete</span>
         </a>
     </div>
 </section>
