@@ -36,10 +36,9 @@ Route::group(['prefix' => 'user','middeware'=>'checklogin'], function () {
         Route::get('/delete/{id}','TaskController@deleteTask');
         Route::get('/get-task-is-delete','TaskController@getTaskIsDeleted');
         Route::post('/search','TaskController@searchTask');
-        
+        Route::get('/delete-task/{id}','TaskController@deleteTaskInTrash')->name("delete.task");
+        Route::get('/restore-task/{id}','TaskController@restoreTask')->name('restore.task');
+        Route::get('/getClip','TaskController@getTaskClip')->name('get.clip');
     });
     
-});
-Route::get('/test',function(){
-    return "Aaaa";
 });

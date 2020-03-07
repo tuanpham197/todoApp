@@ -13,7 +13,9 @@
             </div>
         @endif
         @isset($message)
-            {{$message}}
+            <div class="alert">
+                {{$message}}
+            </div>
         @endisset
         <form action="{{route('post.task')}}" method="post" >
             @csrf
@@ -33,7 +35,7 @@
                         
                     </ul>
                 </div>
-                <button id="destroy">destroy</button>
+                <button id="destroy" style="display:none">destroy</button>
             </div>
             <div class="form-group">
                 <input type="submit" value="Add" >

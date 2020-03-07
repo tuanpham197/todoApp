@@ -92,6 +92,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     <script>
         function splitStr(arr)
@@ -161,11 +162,8 @@
         {
             hiddenModal(); 
         }
-        // handle btn delete
-        function deleteBtn(e)
+        function modalConfirm(e,url,name)
         {
-            event.preventDefault();
-
             // handle show div when click
             var modal = document.getElementsByClassName('modal-delete');
             modal[0].style.opacity = 1;
@@ -176,9 +174,16 @@
             var id = e.getAttribute('data-id');
             var tag = document.getElementsByClassName('modal-delete__body__content__btn');
             tag[0].innerHTML = '';
-            var str = `<a href="user/tasks/delete/${id}">Delete</a>
+            var str = `<a href="user/tasks/${url}/${id}">${name}</a>
                         <button onclick="cancelBtn(this)" >Cancel</button>`;
             tag[0].innerHTML = str;
+        }
+        // handle btn delete
+        function deleteBtn(e)
+        {
+            event.preventDefault();
+
+            modalConfirm(e,'delete','Delete');
             
         }
     </script>
@@ -316,7 +321,114 @@
             }
         });
     }
+    <?php 
+        echo "var arr  = ".$arrTask.";";
+    ?>
+    console.log(arr);
+    
+    function compareStr(a, b) {
+        // Use toUpperCase() to ignore character casing
+        const bandA = a.title.toUpperCase();
+        const bandB = b.title.toUpperCase();
+
+        let comparison = 0;
+        if (bandA > bandB) {
+            comparison = 1;
+        } else if (bandA < bandB) {
+            comparison = -1;
+        }
+        return comparison;
+    }
+    function sortDateTang()
+    {
+        const sortedActivities = arr.sort((a, b) => {
+            if((new Date(a.created_at)).getTime() - (new Date(b.created_at)).getTime() > 1)
+                return -1;
+            else
+                return 1;
+        });
+        var str = "";
+                var i=0;
+                sortedActivities.forEach(element => {
+                    var date = element.created_at.split(' ');
+                    str = str + `
+                    <div class="list_todo_boxList_task_item" id="task-${element.id}">
+                        <div class="list_todo_boxList_task_item_content ${element.clip === 1 ? "clip" : ""} ">
+                            <div class="taskClick" data-id="${element.id}">
+                                <h4>${element.title}</h4>
+                                <p><span id="icon"><i class="far fa-clock"></i></span>${date[0]} <span id="icon"><i class="fas fa-tag"></i></span>${splitStr(element.category)}</p>
+                            </div>
+                        </div>
+                    </div>
+                    `;    
+                });
+
+                var box = document.getElementsByClassName('list_todo_boxList_task');
+                box[0].innerHTML = str;
+                handleDetail();
+        console.log(sortedActivities);
         
+    }
+    function sortDateGiam()
+    {
+        const sortedActivities = arr.sort((a, b) => {
+            if((new Date(a.created_at)).getTime() - (new Date(b.created_at)).getTime() < 1)
+                return -1;
+            else
+                return 1;
+        });
+        var str = "";
+        var i=0;
+        sortedActivities.forEach(element => {
+            var date = element.created_at.split(' ');
+            str = str + `
+            <div class="list_todo_boxList_task_item" id="task-${element.id}">
+                <div class="list_todo_boxList_task_item_content ${element.clip === 1 ? "clip" : ""} ">
+                    <div class="taskClick" data-id="${element.id}">
+                        <h4>${element.title}</h4>
+                        <p><span id="icon"><i class="far fa-clock"></i></span>${date[0]} <span id="icon"><i class="fas fa-tag"></i></span>${splitStr(element.category)}</p>
+                    </div>
+                </div>
+            </div>
+            `;    
+        });
+
+        var box = document.getElementsByClassName('list_todo_boxList_task');
+        box[0].innerHTML = str;
+        handleDetail();
+        
+    }
+    function sortTitle()
+    {
+        arr.sort(compareStr);
+        var str = "";
+        var i=0;
+        arr.forEach(element => {
+            var date = element.created_at.split(' ');
+            str = str + `
+            <div class="list_todo_boxList_task_item" id="task-${element.id}">
+                <div class="list_todo_boxList_task_item_content ${element.clip === 1 ? "clip" : ""} ">
+                    <div class="taskClick" data-id="${element.id}">
+                        <h4>${element.title}</h4>
+                        <p><span id="icon"><i class="far fa-clock"></i></span>${date[0]} <span id="icon"><i class="fas fa-tag"></i></span>${splitStr(element.category)}</p>
+                    </div>
+                </div>
+            </div>
+            `;    
+        });
+
+        var box = document.getElementsByClassName('list_todo_boxList_task');
+        box[0].innerHTML = str;
+        handleDetail();
+        
+    }
+    
+    $('#sort').on('click',function(){
+        if(document.getElementsByClassName('sh').length !== 0)
+            this.children[1].classList.remove('sh');
+        else    
+        this.children[1].classList.add('sh');
+    }) 
     </script>
 
     <script src="js/tag.js"></script>

@@ -163,4 +163,34 @@ class TaskController extends Controller
     {
         return $this->taskServices->searchTask($request->key,Auth::user()->id);
     }
+    public function deleteTaskInTrash($id)
+    {
+        $result = $this->taskServices->deleteTaskInTrash($id);
+        if($result == true){
+            $mess = "Delete is successfuly";
+            $arrTask = $this->taskServices->getTaskIsDelete(Auth::user()->id);
+            return view('pages.task-delete',compact(['mess','arrTask']));
+        }
+        else{
+            $mess = "Delete is fail";
+            return view('pages.task-delete',compact('mess'));
+        }
+    }
+    public function restoreTask($id)
+    {
+        $result = $this->taskServices->restoreTask($id);
+        if($result == true){
+            $arrTask = $this->taskServices->getTaskIsDelete(Auth::user()->id);
+            return view('pages.task-delete',compact('arrTask'));
+        }
+        else{
+            return view('pages.task-delete');
+        }
+    }
+    public function getTaskClip()
+    {
+
+        $arrTask =  $this->taskServices->getTaskClip(Auth::user()->id);
+        return view('pages.index',compact('arrTask'));
+    }
 }

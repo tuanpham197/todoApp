@@ -8,7 +8,16 @@
     <div class="list_todo_boxList">
         <div class="list_todo_boxList_title">
             <h4>Title</h4>
-            <span><i class="fas fa-sort-amount-up-alt"></i></span>
+            <span id="sort">
+                <i class="fas fa-sort-amount-up-alt"></i>
+                <div id="tooltip-sort">
+                    <ul>
+                        <li onclick="sortDateTang()">Sort by date <i class="fas fa-arrow-up"></i></li>
+                        <li onclick="sortTitle()">Sort by title</li>
+                        <li onclick="sortDateGiam()">Sort by date <i class="fas fa-arrow-down"></i></li>
+                    </ul>
+                </div>
+            </span>
         </div>
         <div class="list_todo_boxList_task">
             @foreach ($arrTask as $item)

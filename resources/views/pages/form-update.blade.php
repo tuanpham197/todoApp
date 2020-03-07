@@ -39,7 +39,7 @@
                             
                         </ul>
                     </div>
-                    <button id="destroy">destroy</button>
+                    <button id="destroy" style="display:none">destroy</button>
                 </div>
             </div>
         </form>

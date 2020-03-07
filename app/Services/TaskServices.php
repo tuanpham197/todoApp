@@ -138,4 +138,24 @@ class TaskServices
             ['public','=',1]
         ])->with('category')->get();
     }
+    public function deleteTaskInTrash($id)
+    {
+        $task = Task::findOrFail($id);
+        return $task->delete();
+    }
+    public function restoreTask($id)
+    {
+        $task = Task::findOrFail($id);
+        $task->public = 1;
+        return $task->save();
+    }
+    public function getTaskClip($user_id)
+    {
+        $arrTask = Task::where([
+            ['public','=',1],
+            ['user_id','=',$user_id],
+            ['clip' ,'=',1]
+        ])->get(); 
+        return $arrTask;
+    }
 }

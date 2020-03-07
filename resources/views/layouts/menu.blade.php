@@ -8,7 +8,7 @@
         <ul class="menu_left_all_list">
             <li >
                 <a href="user/task">
-                    <span><i class="fas fa-sticky-note"></i></span>All Notes <span class="qty">{{count($arrTask)}}</span>
+                    <span><i class="fas fa-sticky-note"></i></span>All Notes <span class="qty">{{$total}}</span>
                 </a>
             </li>
             <li class="accordion">
@@ -28,8 +28,8 @@
                 </ul>
             </li>
             <li>
-                <a href="">
-                    <span><i class="fas fa-paperclip"></i></span>Clip <span class="qty">10</span>
+                <a href="{{route('get.clip')}}">
+                    <span><i class="fas fa-paperclip"></i></span>Clip <span class="qty">{{$count}}</span>
                 </a>
             </li>
             <li>

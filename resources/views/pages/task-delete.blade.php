@@ -14,8 +14,11 @@
         <div class="list_todo_boxList">
             <div class="list_todo_boxList_title">
                 <h4>Title</h4>
-                <span><i class="fas fa-sort-amount-up-alt"></i></span>
+                <span id="sort"><i class="fas fa-sort-amount-up-alt"></i></span>
             </div>
+            @isset($mess)
+                {{$mess}}
+            @endisset
             <div class="list_todo_boxList_task">
                 @foreach ($arrTask as $item)
                 <div class="list_todo_boxList_task_item" id="task-{{$item->id}}">
@@ -25,10 +28,10 @@
                                     <h4>{{$item->title}}</h4>
                                     <p><span id="icon"><i class="far fa-clock"></i></span>2020/01/27 <span id="icon"><i class="fas fa-tag"></i></span>{{$item->category[0]->name}}</p>
                                 </div>
-                                <div class="btnAction">
-                                    <a href="">Restore</a>
-                                    <a href="">Delete</a>
-                                </div>
+                            </div>
+                            <div class="btnAction">
+                                <button href="{{route('restore.task',$item->id)}}" id="recy-restore" onclick="restore(this)" data-id="{{$item->id}}">Restore</button>
+                                <button href="{{route('delete.task',$item->id)}}" id="recy-delete" onclick="confirm(this)" data-id="{{$item->id}}">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -39,5 +42,15 @@
 
     @include('pages.detail')
     
-   
+   <script>
+        function restore(e)
+        {
+            modalConfirm(e,'restore-task','Restore');
+        }   
+        function confirm(e)
+        {
+            console.log(e);
+            modalConfirm(e,'delete-task','Delete');
+        }
+   </script>
 @endsection

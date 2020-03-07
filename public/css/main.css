@@ -205,6 +205,49 @@
   padding-bottom: 13px;
   padding-left: 20px;
 }
+.list_todo_boxList_title #sort {
+  position: relative;
+  display: inline;
+}
+.list_todo_boxList_title #sort li {
+  cursor: pointer;
+}
+.list_todo_boxList_title #sort .sh {
+  display: block !important;
+}
+.list_todo_boxList_title #sort #tooltip-sort {
+  position: absolute;
+  width: 100px;
+  display: none;
+  z-index: 10000000000000002000;
+  background: #fff;
+  box-shadow: -1px 1px 9px #8e8888;
+  left: auto;
+  top: -20px;
+  right: 30px;
+  border-radius: 5px;
+  padding: 10px;
+}
+.list_todo_boxList_title #sort #tooltip-sort ul li {
+  list-style: none;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  padding-top: 10px;
+}
+.list_todo_boxList_title #sort #tooltip-sort ul li:last-child {
+  border-bottom: none;
+}
+.list_todo_boxList_title #sort #tooltip-sort:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #fff;
+  position: absolute;
+  right: -10px;
+  top: 20px;
+}
 .list_todo_boxList_task .active {
   border-left: 5px solid #FE6100;
 }
@@ -220,6 +263,8 @@
   padding-right: 9px;
   padding-bottom: 15px;
   padding-left: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 .list_todo_boxList_task_item_content .taskClick {
   color: #2B3137;
@@ -237,30 +282,6 @@
   display: flex;
   justify-content: space-between;
 }
-.list_todo_boxList_task_item_content .action .btnAction {
-  display: flex;
-  align-items: center;
-}
-.list_todo_boxList_task_item_content .action .btnAction a {
-  border: 1px solid #ccc;
-  padding: 3px 10px;
-  border-radius: 25px;
-  text-decoration: none;
-  color: #333;
-}
-.list_todo_boxList_task_item_content .action .btnAction a:last-child:hover {
-  background-color: #FF4136;
-  border: 1px solid #FF4136;
-  color: #fff;
-}
-.list_todo_boxList_task_item_content .action .btnAction a:first-child {
-  margin-right: 5px;
-}
-.list_todo_boxList_task_item_content .action .btnAction a:first-child:hover {
-  background-color: #0074D9;
-  border: 1px solid #0074D9;
-  color: #fff;
-}
 .list_todo_boxList_task_item_content p {
   font-family: "Futura PT Book", sans-serif;
   font-size: 13px;
@@ -269,6 +290,31 @@
 .list_todo_boxList_task_item_content h4 {
   font-size: 17px;
   color: #37312B;
+}
+.list_todo_boxList_task_item_content .btnAction {
+  display: flex;
+  align-items: center;
+}
+.list_todo_boxList_task_item_content .btnAction button {
+  border: 1px solid #ccc;
+  padding: 3px 10px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+}
+.list_todo_boxList_task_item_content .btnAction button:last-child:hover {
+  background-color: #FF4136;
+  border: 1px solid #FF4136;
+  color: #fff;
+}
+.list_todo_boxList_task_item_content .btnAction button:first-child {
+  margin-right: 5px;
+}
+.list_todo_boxList_task_item_content .btnAction button:first-child:hover {
+  background-color: #0074D9;
+  border: 1px solid #0074D9;
+  color: #fff;
 }
 .list_todo_boxList_task_item .clip::before {
   content: "";
@@ -580,6 +626,27 @@
   width: 96%;
   border: 1px solid #ddd;
   border-radius: 5px;
+}
+.add__task__content input[type=submit] {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.add__task__content .alert {
+  background-color: #ddd;
+  padding: 10px;
+  width: 95%;
+}
+.add__task__content .alert ul li {
+  list-style: none;
 }
 .add__task__content #recommend-tag {
   display: none;

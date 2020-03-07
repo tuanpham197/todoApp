@@ -39,7 +39,9 @@ class AppServiceProvider extends ServiceProvider
                 $arrCategory = $cate->findCategory($id);
                 $arrTask     = $task->findTaskByUser($id);
                 $taskLastest = $task->getTaskLatest($id);
-                View::share(['arrCategory' => $arrCategory, 'arrTask' => $arrTask,'task'=>$taskLastest]);
+                $count       = count($task->getTaskClip($id));
+                $total       = count($arrTask);
+                View::share(['arrCategory' => $arrCategory, 'arrTask' => $arrTask,'task'=>$taskLastest,'count'=>$count,'total'=>$total]);
             }
         });
         
