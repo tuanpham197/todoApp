@@ -11,10 +11,8 @@
 <body>
     <div id="wrapper">
         <div class="container">
-            <div class="col-5">
-                <img src="images/img-01.png" alt="">
-            </div>
-            <div class="col-7">
+           
+            <div class="col-12">
                 <form action="{{route('postRegister')}}" method="post">
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -30,14 +28,14 @@
                     @endisset
                     @csrf
                     <div class="title">
-                        <h2>Register Task.com</h2>
+                        <h2>Register Member</h2>
                     </div>
                     <input type="text" name="name" placeholder="Username">
                     <input type="email" name="email" placeholder="Email">
                     <input type="password" name="password" placeholder="Password">
                     <input type="password" name="repassword" placeholder="Re-Password">
                     <input type="submit" value="Register"><br>
-                    <a href="">Login ?</a>
+                    <a href="{{route('getlogin')}}">Login ?</a>
                 </form>
             </div>
         </div>

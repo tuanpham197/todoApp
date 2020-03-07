@@ -3,8 +3,9 @@
 @section('content')
     
     @include('layouts.menu')
-    @include('layouts.listtask')
-    @include('pages.detail')
-    
+    <div class="main">
+        @include('layouts.listtask')
+        @include('pages.detail')
+    </div>
    
 @endsection

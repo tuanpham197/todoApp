@@ -1,19 +1,19 @@
 <section class="menu_left">
     <div class="menu_left_create">
         <a href="{{route('add.task')}}">
-            <span><i class="fas fa-plus"></i></span>Create New
+            <span><i class="fas fa-plus"></i></span><span class="tag-mobie">Create New</span>
         </a>
     </div>
     <div class="menu_left_all">
         <ul class="menu_left_all_list">
             <li >
                 <a href="user/task">
-                    <span><i class="fas fa-sticky-note"></i></span>All Notes <span class="qty">{{$total}}</span>
+                    <span><i class="fas fa-sticky-note"></i></span><span class="tag-mobie">All Notes</span> <span class="qty">{{$total}}</span>
                 </a>
             </li>
             <li class="accordion">
                 <p>
-                    <span><i class="fas fa-tags"></i></span>Category 
+                    <span><i class="fas fa-tags"></i></span><span class="tag-mobie">Category</span>
                 </p>
                 <ul class="menu_left_all_list_sub">
                     @foreach ($arrCategory as $item)
@@ -29,13 +29,13 @@
             </li>
             <li>
                 <a href="{{route('get.clip')}}">
-                    <span><i class="fas fa-paperclip"></i></span>Clip <span class="qty">{{$count}}</span>
+                    <span><i class="fas fa-paperclip"></i></span><span class="tag-mobie">Clip</span> <span class="qty">{{$count}}</span>
                 </a>
             </li>
             <li>
                 <button id="modal">
                     <span><i class="fas fa-plus"></i></span>
-                    Add Category
+                    <span class="tag-mobie">Add Category</span>
                 </button>
             </li>
         </ul>

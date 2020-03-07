@@ -632,7 +632,7 @@
   /* Green */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 12px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -641,7 +641,9 @@
   cursor: pointer;
 }
 .add__task__content .alert {
-  background-color: #ddd;
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
   padding: 10px;
   width: 95%;
 }
@@ -769,6 +771,34 @@ input.tag-input {
   }
   20%, 40%, 60%, 80% {
     transform: translate3d(5px, 0, 0);
+  }
+}
+@media screen and (max-width: 768px) {
+  .menu_left {
+    width: 150px;
+    height: calc(100vh - 0px);
+  }
+
+  .list_todo {
+    width: 310px;
+  }
+
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .list_todo {
+    width: 100%;
+    height: 450px;
+  }
+
+  .detail_todo {
+    width: 100%;
+  }
+
+  .menu_left {
+    font-size: 14px;
   }
 }
 * {

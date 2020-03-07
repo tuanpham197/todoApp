@@ -11,10 +11,7 @@
 <body>
     <div id="wrapper">
         <div class="container">
-            <div class="col-5">
-                <img src="images/img-01.png" alt="">
-            </div>
-            <div class="col-7">
+            <div class="col-12">
                 <form action="{{route('postlogin')}}" method="post">
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -30,7 +27,7 @@
                     @endisset
                     @csrf
                     <div class="title">
-                        <h2>Login Task.com</h2>
+                        <h2>Login Website</h2>
                     </div>
                     <input type="email" name="email" placeholder="Email">
                     <input type="password" name="password" placeholder="Password">
