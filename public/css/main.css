@@ -970,6 +970,10 @@ input.tag-input {
   .list_todo_search input[type=text] {
     width: 97%;
   }
+
+  .list_todo_search input[type=submit] {
+    right: 40px;
+  }
 }
 * {
   margin: 0px;
