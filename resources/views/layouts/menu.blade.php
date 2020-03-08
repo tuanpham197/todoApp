@@ -57,8 +57,8 @@
             <i class="fas fa-times"></i>
         </label>
         <ul>
-            <li><a href="{{route('add.task')}}"><span><i class="fas fa-plus"></i></span>Create new</a></li>
-            <li><a href="user/task"><span><i class="fas fa-sticky-note"></i></span>All note</a></li>
+            <li><a href="{{route('add.task')}}"><span><i class="fas fa-plus"></i></span>Create New</a></li>
+            <li><a href="user/task"><span><i class="fas fa-sticky-note"></i></span>All Notes</a></li>
             <li class="accordion2">
                 <p>
                     <span><i class="fas fa-tags"></i></span><span class="tag-mobie">Category</span>
