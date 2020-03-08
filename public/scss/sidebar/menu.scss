@@ -10,6 +10,13 @@
         right: 15px;
         top:15px;
     }
+    .btn-icon{
+        i{
+            font-size: 20px;
+            color:#fff;
+        }
+        display: none;
+    }
     &_create{
         a{
             font-family: 'Futura PT', sans-serif;
@@ -149,5 +156,110 @@
                 margin-left: 5px;
             }
         }
+    }
+    .nav__input:checked ~ .overlay{
+        display: block;
+    }
+    .nav__input:checked ~ .menu_left_mobie{
+        transform: translateX(0%);
+    }
+    .overlay{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 99;
+        display: none;
+        animation: fadeIn linear 0.4s;
+    }
+    .menu_left_mobie{
+        transform: translateX(-100%);
+        position: fixed;
+        left: 0;
+        top:0;
+        bottom: 0;
+        transition: transform linear 0.4s;
+        background-color: #fff;
+        z-index: 999;
+        width: 150px;
+        max-width: 100%;
+        min-height: calc(100vh - 15px);
+        padding: {
+            left:15px;
+            right: 15px;
+            top:15px;
+        }
+        .btn-close{
+            position: absolute;
+            right: 10px;
+            top: 15px;
+            i{
+                font-size: 1.4rem;
+            }
+    
+        }
+        ul{
+            
+            li{
+                list-style: none;
+                font: {
+                    family: 'Futura PT', sans-serif;
+                    size:16px;
+                }
+                
+                a{
+                    text-decoration: none;
+                    color:#333;
+                    span{
+                        font-size: 15px;
+                        margin-right: 10px;
+                        color:#333;
+                    }
+                }
+                p{
+                    span{
+                        font-size: 15px;
+                        margin-right: 5px;
+                        color:#333;
+                    }
+                }
+            }
+            .accordion2{
+                transition: 0.4s;
+                ul{
+                    margin-left: 30px;
+                    display: block;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.5s ease-out;
+                }
+            }
+            .accordion2:after {
+                content: "+";
+                color: #333;
+                font-weight: bold;
+                position: absolute;
+                right: 15px;
+                top: 58px;
+                margin-left: 5px;
+              }
+              
+            .active:after {
+                content: "\2212";
+            }
+        }
+    }
+}
+
+
+
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

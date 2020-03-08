@@ -12,8 +12,14 @@
 }
 
 @media screen and (max-width: 992px) {
+    .btn-icon{
+        display: block !important;
+    }
+    .menu_left_create,.menu_left_all,.menu_left_bottom{
+        display: none;
+    }
     .menu_left {
-        width: 150px;
+        width: 25px;
         height: calc(100vh - 15px);
     }
     .list_todo {

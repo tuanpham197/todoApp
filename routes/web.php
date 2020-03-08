@@ -21,7 +21,7 @@ Route::post('/login','UserController@checkLoginUser')->name('postlogin');
 Route::get('/register','UserController@getRegister')->name('getRegister');
 Route::post('/register','UserController@postRegister')->name('postRegister');
 
-Route::group(['prefix' => 'user','middeware'=>'checklogin'], function () {
+Route::group(['prefix' => 'user','middleware'=>'check'], function () {
     Route::resource('/task','TaskController');
     Route::group(['prefix' => 'category'], function () {
         Route::get('/{id}','CategoryController@getTaskByCategory');

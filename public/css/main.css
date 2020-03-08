@@ -20,6 +20,13 @@
   padding-right: 15px;
   padding-top: 15px;
 }
+.menu_left .btn-icon {
+  display: none;
+}
+.menu_left .btn-icon i {
+  font-size: 20px;
+  color: #fff;
+}
 .menu_left_create a {
   font-family: "Futura PT", sans-serif;
   color: #37312B;
@@ -147,7 +154,107 @@
 .menu_left_bottom a img {
   margin-left: 5px;
 }
+.menu_left .nav__input:checked ~ .overlay {
+  display: block;
+}
+.menu_left .nav__input:checked ~ .menu_left_mobie {
+  transform: translateX(0%);
+}
+.menu_left .overlay {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 99;
+  display: none;
+  -webkit-animation: fadeIn linear 0.4s;
+          animation: fadeIn linear 0.4s;
+}
+.menu_left .menu_left_mobie {
+  transform: translateX(-100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transition: transform linear 0.4s;
+  background-color: #fff;
+  z-index: 999;
+  width: 150px;
+  max-width: 100%;
+  min-height: calc(100vh - 15px);
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+.menu_left .menu_left_mobie .btn-close {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+.menu_left .menu_left_mobie .btn-close i {
+  font-size: 1.4rem;
+}
+.menu_left .menu_left_mobie ul li {
+  list-style: none;
+  font-family: "Futura PT", sans-serif;
+  font-size: 16px;
+}
+.menu_left .menu_left_mobie ul li a {
+  text-decoration: none;
+  color: #333;
+}
+.menu_left .menu_left_mobie ul li a span {
+  font-size: 15px;
+  margin-right: 10px;
+  color: #333;
+}
+.menu_left .menu_left_mobie ul li p span {
+  font-size: 15px;
+  margin-right: 5px;
+  color: #333;
+}
+.menu_left .menu_left_mobie ul .accordion2 {
+  transition: 0.4s;
+}
+.menu_left .menu_left_mobie ul .accordion2 ul {
+  margin-left: 30px;
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+.menu_left .menu_left_mobie ul .accordion2:after {
+  content: "+";
+  color: #333;
+  font-weight: bold;
+  position: absolute;
+  right: 15px;
+  top: 58px;
+  margin-left: 5px;
+}
+.menu_left .menu_left_mobie ul .active:after {
+  content: "\2212";
+}
 
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .list_todo {
   position: relative;
   width: 450px;
@@ -781,8 +888,16 @@ input.tag-input {
   }
 }
 @media screen and (max-width: 992px) {
+  .btn-icon {
+    display: block !important;
+  }
+
+  .menu_left_create, .menu_left_all, .menu_left_bottom {
+    display: none;
+  }
+
   .menu_left {
-    width: 150px;
+    width: 25px;
     height: calc(100vh - 15px);
   }
 
