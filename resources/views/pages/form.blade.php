@@ -29,7 +29,7 @@
             </div>
             <div class="form-group">
                 <label for="">Category</label>
-                <input type="text" id="exist-values" class="tagged form-control" data-removeBtn="true" name="tag-2" value="PC,Play Station 4,X-BOX One" placeholder="Add Platform">
+                <input type="text" id="exist-values" class="tagged form-control" data-removeBtn="true" name="tag-2" value="Sports,Music" placeholder="Add Platform">
                 <div id="recommend-tag">
                     <ul>
                         
