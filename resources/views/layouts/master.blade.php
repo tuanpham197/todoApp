@@ -214,18 +214,18 @@
                                     <div class="detail_todo_option">
                                         <div class="detail_todo_option_left">
                                             <a href="user/tasks/update/${data.id}">
-                                                <img src="images/pen-solid.png" alt="">Edit
+                                                <img src="images/pen-solid.png" alt=""><span class="hidd">Edit</span> 
                                             </a>
                                             <a href="">
-                                                <img src="images/save-solid.png" alt="">Save
+                                                <img src="images/save-solid.png" alt=""><span class="hidd">Save</span> 
                                             </a>
                                             <a href="#" id="clipDetail" data-id=${data.id} onclick="clipAdd(this)">
-                                                <img src="images/paperclip-solid.png" alt="">Clip
+                                                <img src="images/paperclip-solid.png" alt=""><span class="hidd">Clip</span>
                                             </a>
                                         </div>
                                         <div class="detail_todo_option_right">
                                             <a href="user/tasks/delete/${data.id}" onclick="deleteBtn(this)" data-id="${data.id}">
-                                                <img src="images/trash-solid.png" alt="">Delete
+                                                <img src="images/trash-solid.png" alt=""><span class="hidd">Delete</span> 
                                             </a>
                                         </div>
                                     </div>

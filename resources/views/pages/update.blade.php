@@ -3,8 +3,10 @@
 @section('content')
     
     @include('layouts.menu')
-    @include('layouts.listtask')
-    @include('pages.form-update')
+    <div class="main">
+        @include('layouts.listtask')
+        @include('pages.form-update')
+    </div>
     
    
 @endsection

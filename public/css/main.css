@@ -198,6 +198,8 @@
 }
 .menu_left .menu_left_mobie ul li {
   list-style: none;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0 7px 0;
   font-family: "Futura PT", sans-serif;
   font-size: 16px;
 }
@@ -231,7 +233,7 @@
   font-weight: bold;
   position: absolute;
   right: 15px;
-  top: 58px;
+  top: 64px;
   margin-left: 5px;
 }
 .menu_left .menu_left_mobie ul .active:after {
@@ -535,6 +537,7 @@
   margin-left: 40px;
   margin-top: 21.5px;
   margin-right: 33.5px;
+  margin-bottom: 20px;
 }
 .detail_todo_content_text textarea {
   width: 93%;
@@ -898,7 +901,6 @@ input.tag-input {
 
   .menu_left {
     width: 25px;
-    height: calc(100vh - 15px);
   }
 
   .list_todo {
@@ -948,6 +950,11 @@ input.tag-input {
     width: 17px;
     height: 17px;
     margin-right: 0px;
+  }
+}
+@media screen and (max-width: 628px) {
+  .modal-delete__body {
+    width: 80%;
   }
 }
 * {

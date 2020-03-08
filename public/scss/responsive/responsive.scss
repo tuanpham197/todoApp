@@ -20,7 +20,7 @@
     }
     .menu_left {
         width: 25px;
-        height: calc(100vh - 15px);
+        
     }
     .list_todo {
         width: 310px;
@@ -61,5 +61,10 @@
         width: 17px;
         height: 17px;
         margin-right: 0px;
+    }
+}
+@media screen and (max-width :628px){
+    .modal-delete__body {
+        width: 80%;
     }
 }

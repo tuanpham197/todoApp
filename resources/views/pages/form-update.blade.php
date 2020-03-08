@@ -3,18 +3,18 @@
     <div class="detail_todo_option">
         <div class="detail_todo_option_left">
             <a href="{{route('get.update',$task->id)}}">
-                <img src="images/pen-solid.png" alt="">Edit
+                <img src="images/pen-solid.png" alt=""><span class="hidd">Edit</span> 
             </a>
             <a href="#" id="saveBtn" data-id="{{$task->id}}">
-                <img src="images/save-solid.png" alt="">Save
+                <img src="images/save-solid.png" alt=""><span class="hidd">Save</span> 
             </a>
             <a href="#" id="clipDetail" data-id="{{$task->id}}" onclick="clipAdd(this)">
-                <img src="images/paperclip-solid.png" alt="">Clip
+                <img src="images/paperclip-solid.png" alt=""><span class="hidd">Clip</span>
             </a>
         </div>
         <div class="detail_todo_option_right">
             <a href="user/tasks/delete/{{$task->id}}" onclick="deleteBtn(this)" data-id="{{$task->id}}">
-                <img src="images/trash-solid.png" alt="">Delete
+                <img src="images/trash-solid.png" alt=""><span class="hidd">Delete</span> 
             </a>
         </div>
     </div>
@@ -30,7 +30,7 @@
                 
             </div>
             <div class="detail_todo_content_text">
-                <textarea style="width: 100%" name="content" id="content" cols="" rows="15">{{trim($task->content)}}</textarea>
+                <textarea style="width: 100%" name="content" id="content" cols="" rows="10">{{trim($task->content)}}</textarea>
                 <div class="form-group">
                     <label for="">Category</label>
                     <input type="text" id="exist-values" class="tagged form-control" data-removeBtn="true" name="tag-2" value="{{$str}}" placeholder="Add Platform">
