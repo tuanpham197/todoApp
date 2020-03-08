@@ -276,7 +276,7 @@
 }
 .list_todo_search input[type=text] {
   position: relative;
-  width: 100%;
+  width: 96%;
   height: 40px;
   padding-left: 10px;
   border-radius: 120px;
@@ -292,7 +292,7 @@
   width: 20px;
   border: none;
   position: absolute;
-  right: 21px;
+  right: 34px;
   top: 25px;
   height: 20px;
   background-repeat: no-repeat;
@@ -692,7 +692,7 @@
   text-decoration: none;
 }
 .modal-delete__body__content__btn a:first-child {
-  padding: 7px 10px;
+  padding: 4px 12px;
   width: 70px;
   border: 1px solid #FF4136;
   border-radius: 15px;
@@ -701,7 +701,7 @@
 }
 .modal-delete__body__content__btn button {
   cursor: pointer;
-  padding: 7px 10px;
+  padding: 4px 12px;
   width: 70px;
   border: 1px solid #0074D9;
   border-radius: 15px;
@@ -964,6 +964,11 @@ input.tag-input {
 @media screen and (max-width: 628px) {
   .modal-delete__body {
     width: 80%;
+  }
+}
+@media screen and (min-width: 525px) {
+  .list_todo_search input[type=text] {
+    width: 97%;
   }
 }
 * {
