@@ -737,7 +737,7 @@
 .add__task__content input[type=text], .add__task__content textarea {
   padding-top: 2px;
   padding-left: 10px;
-  width: 96%;
+  width: 97.5%;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
