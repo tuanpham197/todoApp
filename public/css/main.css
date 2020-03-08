@@ -260,7 +260,6 @@
 .list_todo {
   position: relative;
   width: 450px;
-  overflow-y: scroll;
   height: calc(100vh - 2px);
   border: 1px solid #DCDCDC;
   border-top: 2px solid #DCDCDC;
@@ -356,6 +355,10 @@
   position: absolute;
   right: -10px;
   top: 20px;
+}
+.list_todo_boxList_task {
+  height: calc(100vh - 122px);
+  overflow-y: scroll;
 }
 .list_todo_boxList_task .active {
   border-left: 5px solid #FE6100;
@@ -901,6 +904,10 @@ input.tag-input {
 
   .menu_left {
     width: 25px;
+  }
+
+  .list_todo_boxList_task {
+    height: 300px;
   }
 
   .main {
