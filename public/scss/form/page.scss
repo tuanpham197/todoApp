@@ -1,5 +1,5 @@
 .add__task{
-    width: calc(100% - 750px);
+    width: calc(100% - 451px);
     box-sizing: border-box;
     font-family: 'Futura PT Book',sans-serif;
     &__header{
@@ -20,6 +20,7 @@
         padding: {
             top:15px;
             left:15px;
+            right: 15px;
         }
         input[type=text]{
             height: 35px;

@@ -24,7 +24,6 @@
     }
     .list_todo_boxList_task {
         height: 300px;
-    
         
     }
     .main{
@@ -45,6 +44,9 @@
     }
     .qty{
         display: none;
+    }
+    .add__task{
+        width: 100%;
     }
 }
 @media screen and (max-width: 1120px ) {

@@ -710,7 +710,7 @@
 }
 
 .add__task {
-  width: calc(100% - 750px);
+  width: calc(100% - 451px);
   box-sizing: border-box;
   font-family: "Futura PT Book", sans-serif;
 }
@@ -726,6 +726,7 @@
 .add__task__content {
   padding-top: 15px;
   padding-left: 15px;
+  padding-right: 15px;
 }
 .add__task__content input[type=text] {
   height: 35px;
@@ -931,6 +932,10 @@ input.tag-input {
 
   .qty {
     display: none;
+  }
+
+  .add__task {
+    width: 100%;
   }
 }
 @media screen and (max-width: 1120px) {
