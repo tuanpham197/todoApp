@@ -501,6 +501,13 @@
 .detail_todo_option_right a img {
   margin-right: 5px;
 }
+.detail_todo_content .alert {
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+  padding: 10px;
+  width: auto;
+}
 .detail_todo_content_title_info {
   padding-top: 30px;
   padding-left: 40px;
@@ -701,7 +708,8 @@
 }
 .modal-delete__body__content__btn button {
   cursor: pointer;
-  padding: 4px 12px;
+  padding: 7px 12px;
+  padding: 7px 12px;
   width: 70px;
   border: 1px solid #0074D9;
   border-radius: 15px;
@@ -895,6 +903,15 @@ input.tag-input {
   }
 }
 @media screen and (max-width: 992px) {
+  .detail_todo_content_title_text {
+    margin-left: 16px;
+    font-size: 18px;
+  }
+
+  .detail_todo_content_title_info {
+    padding-left: 26px;
+  }
+
   .btn-icon {
     display: block !important;
   }

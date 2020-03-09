@@ -25,7 +25,7 @@
                     <div class="list_todo_boxList_task_item_content {{$item->clip ==1 ? "clip" : ""}} ">
                         <div class="taskClick" data-id="{{$item->id}}">
                             <h4>{{$item->title}}</h4>
-                            <p><span id="icon"><i class="far fa-clock"></i></span>2020/01/27 <span id="icon"><i class="fas fa-tag"></i></span>{{$item->category[0]->name}}</p>
+                            <p><span id="icon"><i class="far fa-clock"></i></span>2020/01/27 <span id="icon"><i class="fas fa-tag"></i>  {{$item->category[0]->name}}</span></p>
                         </div>
                     </div>
                 </div>

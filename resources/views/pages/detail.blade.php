@@ -21,7 +21,9 @@
     <div class="detail_todo_content">
             <div class="message">
                 @isset($message)
-                    {{$message}}
+                    <div class="alert">
+                        {{$message}}
+                    </div>
                 @endisset
             </div>
             <div class="detail_todo_content_title">

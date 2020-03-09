@@ -79,13 +79,13 @@
         <div class="modal-delete">
             <div class="modal-delete__body">
                 <div class="modal-delete__body__header">
-                    <h5>Confirm delete task.</h5>
+                    <h5>Confirm</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-delete__body__content">
-                    <h5>Ban co chan chan xoa task khong ?</h5>
+                    <h5>Are you sure to want to delete ?</h5>
                     <div class="modal-delete__body__content__btn">
                         
                     </div>

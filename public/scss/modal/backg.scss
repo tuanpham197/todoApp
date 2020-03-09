@@ -1,5 +1,5 @@
-@mixin btnC($a,$b) {
-    padding: 4px 12px;
+@mixin btnC($a,$b,$td,$lr) {
+    padding: $td $lr;
     width: 70px;
     border: 1px solid $a;
     border-radius: 15px;
@@ -137,12 +137,13 @@
                     text-decoration: none;
                 }
                 a:first-child{
-                    @include btnC(#FF4136, #fff);
+                    @include btnC(#FF4136, #fff,4px,12px);
      
                 }
                 button{
                     cursor: pointer;
-                    @include btnC(#0074D9, #fff);
+                    padding: 7px 12px;
+                    @include btnC(#0074D9, #fff,7px,12px);
                 }
             }
         }

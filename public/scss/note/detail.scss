@@ -64,6 +64,13 @@
         }
     }
     &_content{
+        .alert{
+            color: #004085;
+            background-color: #cce5ff;
+            border-color: #b8daff;
+            padding: 10px;
+            width: auto;
+        }
         &_title{
             
             &_info{
