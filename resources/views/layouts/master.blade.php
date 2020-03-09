@@ -162,10 +162,12 @@
         {
             hiddenModal(); 
         }
-        function modalConfirm(e,url,name)
+        function modalConfirm(e,url,name,content)
         {
             // handle show div when click
             var modal = document.getElementsByClassName('modal-delete');
+
+            modal[0].children[0].children[1].children[0].innerHTML = content;
             modal[0].style.opacity = 1;
             modal[0].classList.add('ind');
             
@@ -183,7 +185,7 @@
         {
             event.preventDefault();
 
-            modalConfirm(e,'delete','Delete');
+            modalConfirm(e,'delete','Delete','Are you sure to want to delete ?');
             
         }
     </script>
@@ -206,7 +208,7 @@
                             type:'GET',
                             url:'user/task/'+id,
                             success:function(data) { 
-                                console.log(data);
+                            
                                 
                                 var date =  data.created_at.split(' ');
                                 <?php $message = "" ?>
@@ -324,7 +326,7 @@
     <?php 
         echo "var arr  = ".$arrTask.";";
     ?>
-    console.log(arr);
+
     
     function compareStr(a, b) {
         // Use toUpperCase() to ignore character casing
@@ -366,7 +368,7 @@
                 var box = document.getElementsByClassName('list_todo_boxList_task');
                 box[0].innerHTML = str;
                 handleDetail();
-        console.log(sortedActivities);
+
         
     }
     function sortDateGiam()

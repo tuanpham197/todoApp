@@ -54,12 +54,11 @@
    <script>
         function restore(e)
         {
-            modalConfirm(e,'restore-task','Restore');
+            modalConfirm(e,'restore-task','Restore','Are you sure to want to restore ?');
         }   
         function confirm(e)
         {
-            console.log(e);
-            modalConfirm(e,'delete-task','Delete');
+            modalConfirm(e,'delete-task','Delete','Are you sure to want to delete ?');
         }
    </script>
 @endsection
