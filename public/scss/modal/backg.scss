@@ -149,3 +149,89 @@
         }
     }
 }
+.modal-update{
+    &.ind{
+        z-index: 1;
+        animation: fadeIn linear 0.4s;
+    }
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    &__wrapper{
+        font-family: 'Futura PT Book', sans-serif;
+        margin: auto;
+        margin-top: 50px;
+        background: #fff;
+        width: 30%;
+        padding:15px;
+        &__header{
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        &__body{
+            padding-top: 5px;
+            &__content{
+                .alert{
+                    color: #004085;
+                    background-color: #cce5ff;
+                    border-color: #b8daff;
+                    padding: 10px;
+                    width: 95%;
+                }
+                input{
+                    width: 100%;
+                    height: 30px;
+                }
+                input:read-only{
+                    background-color: #333;
+                }
+                button{
+                    background: none;
+                    outline: none;
+                    border:none;
+                    color:#fff;
+                    cursor: pointer;
+                }
+                button:first-child{
+                    padding: 8px;
+                    background-color: #17a2b8;
+                    border-color: #17a2b8;
+                    margin-left: 5px;
+                }
+                button:last-child{
+                    padding: 8px;
+                    background-color: #6c757d;
+                    border-color: #6c757d;
+                }
+                .form-group:last-child{
+                    margin-top: 10px;
+                    display: flex;
+                    flex-direction: row-reverse;
+                    
+                }
+            }
+        }
+    }
+}
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut{
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

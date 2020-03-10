@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="fontawesome/css/solid.css">
     <link rel="stylesheet" href="fontawesome/css/brands.css">
     <link rel="stylesheet" href="fontawesome/css/regular.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css?t=<?php echo time()*1000 ?>">
     <style>
         /* Scrollbar Styling */
         ::-webkit-scrollbar {
@@ -176,7 +176,7 @@
             var id = e.getAttribute('data-id');
             var tag = document.getElementsByClassName('modal-delete__body__content__btn');
             tag[0].innerHTML = '';
-            var str = `<a href="user/tasks/${url}/${id}">${name}</a>
+            var str = `<a href="user/${url}/${id}">${name}</a>
                         <button onclick="cancelBtn(this)" >Cancel</button>`;
             tag[0].innerHTML = str;
         }
@@ -185,7 +185,7 @@
         {
             event.preventDefault();
 
-            modalConfirm(e,'delete','Delete','Are you sure to want to delete ?');
+            modalConfirm(e,'tasks/delete','Delete','Are you sure to want to delete ?');
             
         }
     </script>

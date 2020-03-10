@@ -27,6 +27,9 @@ Route::group(['prefix' => 'user','middleware'=>'check'], function () {
         Route::get('/{id}','CategoryController@getTaskByCategory');
         Route::post('/add','CategoryController@addCategory')->name('addCategory');
         Route::post('/','CategoryController@findCategoryByName');
+        Route::get('/get/all','CategoryController@getAllCategoryUser');
+        Route::get('/delete/{id}','CategoryController@deleteCategory');
+        Route::post('/update/{id}','CategoryController@updateCategory');
     });
     Route::group(['prefix' => 'tasks'], function () {
         Route::get('/add','TaskController@getAddTask')->name('add.task');

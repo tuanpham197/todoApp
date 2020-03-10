@@ -34,10 +34,10 @@
                 </a>
             </li>
             <li>
-                <button id="modal">
-                    <span><i class="fas fa-plus"></i></span>
-                    <span class="tag-mobie">Add Category</span>
-                </button>
+                <a href="user/category/get/all">
+                    <span><i class="fas fa-tasks"></i></span>
+                    <span class="tag-mobie">Manager Category</span>
+                </a>
             </li>
         </ul>
     </div>
@@ -70,6 +70,7 @@
                                 <span><i class="fas fa-tag"></i></span>
                                 {{$item->name}}
                                 <span class="qty">{{$item->task_count}}</span>
+                                
                             </a>
                         </li>
                     @endforeach
@@ -84,39 +85,25 @@
 
 <script>
     var acc = document.getElementsByClassName("accordion2");
-        var i;
-        
-        for (i = 0; i < acc.length; i++) {           
-            acc[0].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panel = this.children[1];               
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                } 
-          });
-        }
-
-
-
-    function getEle(s){
-        return document.getElementsByClassName(s);
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {           
+        acc[0].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.children[1];               
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        });
     }
-    var btn = document.getElementById('modal');
 
-    btn.addEventListener('click',function(){
-        var modal = getEle('modal');
-        modal[0].style.display = "block"; 
-        modal[0].classList.add('show');
-        var btnClose = document.getElementsByClassName('close');
-        var t = [...btnClose];
-        t[0].addEventListener('click',function(){
-            var modal = getEle('modal');
-            modal[0].style.display = "none";
-            modal[0].classList.remove('show');
-        })
-    })
 
+
+    // function getEle(s){
+    //     return document.getElementsByClassName(s);
+    // }
+   
 
 </script>

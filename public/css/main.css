@@ -98,6 +98,21 @@
 .menu_left_all ul li ul li span {
   display: flex;
 }
+.menu_left_all ul li ul li .delete_category {
+  z-index: 999;
+  background-color: #554e45;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 13px;
+  padding: 6px;
+  text-align: center;
+  position: absolute;
+  right: -2px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+}
 .menu_left_all a {
   position: relative;
   font-family: "Futura PT", sans-serif;
@@ -386,6 +401,28 @@
   display: flex;
   justify-content: space-between;
 }
+.list_todo_boxList_task_item_content .options {
+  display: flex;
+  align-items: center;
+}
+.list_todo_boxList_task_item_content .options button {
+  background: none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+.list_todo_boxList_task_item_content .options button:first-child {
+  padding: 8px;
+  margin-right: 5px;
+  border: 1px solid #17a2b8;
+  background-color: #17a2b8;
+}
+.list_todo_boxList_task_item_content .options button:last-child {
+  padding: 8px 9px;
+  border: 1px solid #dc3545;
+  background-color: #dc3545;
+}
 .list_todo_boxList_task_item_content .taskClick {
   color: #2B3137;
   cursor: pointer;
@@ -395,6 +432,18 @@
   margin-right: 5px;
 }
 .list_todo_boxList_task_item_content .taskClick #icon:last-child {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.list_todo_boxList_task_item_content .cateClick {
+  color: #2B3137;
+  cursor: pointer;
+  line-height: 22px;
+}
+.list_todo_boxList_task_item_content .cateClick #icon:first-child {
+  margin-right: 5px;
+}
+.list_todo_boxList_task_item_content .cateClick #icon:last-child {
   margin-right: 5px;
   margin-left: 5px;
 }
@@ -725,6 +774,102 @@
   color: #fff;
 }
 
+.modal-update {
+  opacity: 0;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+}
+.modal-update.ind {
+  z-index: 1;
+  -webkit-animation: fadeIn linear 0.4s;
+          animation: fadeIn linear 0.4s;
+}
+.modal-update__wrapper {
+  font-family: "Futura PT Book", sans-serif;
+  margin: auto;
+  margin-top: 50px;
+  background: #fff;
+  width: 30%;
+  padding: 15px;
+}
+.modal-update__wrapper__header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+.modal-update__wrapper__body {
+  padding-top: 5px;
+}
+.modal-update__wrapper__body__content .alert {
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+  padding: 10px;
+  width: 95%;
+}
+.modal-update__wrapper__body__content input {
+  width: 100%;
+  height: 30px;
+}
+.modal-update__wrapper__body__content input:-moz-read-only {
+  background-color: #333;
+}
+.modal-update__wrapper__body__content input:read-only {
+  background-color: #333;
+}
+.modal-update__wrapper__body__content button {
+  background: none;
+  outline: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.modal-update__wrapper__body__content button:first-child {
+  padding: 8px;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  margin-left: 5px;
+}
+.modal-update__wrapper__body__content button:last-child {
+  padding: 8px;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.modal-update__wrapper__body__content .form-group:last-child {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .add__task {
   width: calc(100% - 451px);
   box-sizing: border-box;

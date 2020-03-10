@@ -131,7 +131,41 @@
                     }
                     display: flex;
                     justify-content: space-between;
+                    .options{
+                        display: flex;
+                        align-items: center;
+                        button{
+                            background: none;
+                            border-radius: 50%;   
+                            color:#fff;
+                            cursor: pointer;  
+                            outline: none;
+                        }
+                        button:first-child{
+                            padding: 8px;
+                            margin-right: 5px;
+                            border: 1px solid #17a2b8;
+                            background-color: #17a2b8;
+                        }
+                        button:last-child{
+                            padding: 8px 9px;
+                            border: 1px solid #dc3545;
+                            background-color: #dc3545;
+                        }
+                    }
                     .taskClick{
+                        color:#2B3137; 
+                        cursor: pointer;
+                        line-height: 22px;
+                        #icon:first-child{
+                            margin-right: 5px;
+                        }
+                        #icon:last-child{
+                            margin-right: 5px;
+                            margin-left: 5px;
+                        }
+                    }
+                    .cateClick{
                         color:#2B3137; 
                         cursor: pointer;
                         line-height: 22px;

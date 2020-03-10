@@ -31,4 +31,21 @@ class CategoryController extends Controller
         $arrCate = $this->categoryServices->findCategoryByName($key);
         return $arrCate;
     }
+    public function getAllCategoryUser()
+    {
+        $arrListCategory = $this->categoryServices->getAllCategoryUser(Auth::user()->id);
+        return view('pages.category',compact('arrListCategory'));
+    }
+    public function deleteCategory($id)
+    {
+        $result = $this->categoryServices->deleteCategory($id);
+        if($result == true)
+        {
+            return redirect('/user/category/get/all');
+        }
+    }
+    public function updateCategory($id,Request $request)
+    {
+        return $this->categoryServices->updateCategory($id,$request);
+    }
 }
