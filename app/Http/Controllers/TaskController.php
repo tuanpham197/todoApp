@@ -169,7 +169,8 @@ class TaskController extends Controller
         if($result == true){
             $mess = "Delete is successfuly";
             $arrTask = $this->taskServices->getTaskIsDelete(Auth::user()->id);
-            return view('pages.task-delete',compact(['mess','arrTask']));
+            return redirect('user/tasks/get-task-is-delete')->with(['mess'=>$mess,'arrTask'=>$arrTask]);
+            //return view('pages.task-delete',compact(['mess','arrTask']));
         }
         else{
             $mess = "Delete is fail";
@@ -181,7 +182,7 @@ class TaskController extends Controller
         $result = $this->taskServices->restoreTask($id);
         if($result == true){
             $arrTask = $this->taskServices->getTaskIsDelete(Auth::user()->id);
-            return view('pages.task-delete',compact('arrTask'));
+            return redirect('user/tasks/get-task-is-delete')->with(['arrTask'=>$arrTask]);
         }
         else{
             return view('pages.task-delete');

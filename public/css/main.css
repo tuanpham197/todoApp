@@ -79,7 +79,7 @@
   padding-bottom: 11px;
 }
 .menu_left_all ul li p span {
-  margin-right: 3px;
+  margin-right: 7px;
 }
 .menu_left_all ul li:focus > ul.menu_left_all_list_sub {
   display: block;
@@ -126,6 +126,11 @@
 .menu_left_all a span {
   margin-right: 8px;
 }
+.menu_left_all a span:first-child {
+  width: 20px;
+  display: flex;
+  float: left;
+}
 .menu_left_all a .qty {
   background-color: #554e45;
   color: #fff;
@@ -167,15 +172,19 @@
 .menu_left_bottom {
   position: absolute;
   bottom: 0;
-  margin-left: 15px;
+  margin-left: 10px;
   font-family: "Futura PT", sans-serif;
 }
 .menu_left_bottom a {
   color: #fff;
   text-decoration: none;
+  font-size: 17px;
 }
 .menu_left_bottom a img {
   margin-left: 5px;
+}
+.menu_left_bottom a span {
+  margin-left: 10px;
 }
 .menu_left .nav__input:checked ~ .overlay {
   display: block;
@@ -325,6 +334,13 @@
 .list_todo_boxList {
   font-family: "Futura PT", sans-serif;
 }
+.list_todo_boxList .alert {
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+  padding: 10px;
+  width: 95%;
+}
 .list_todo_boxList_title {
   height: 23px;
   background-color: #F4F4F4;
@@ -399,6 +415,7 @@
   padding-bottom: 15px;
   padding-left: 15px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .list_todo_boxList_task_item_content .options {
@@ -425,6 +442,7 @@
 }
 .list_todo_boxList_task_item_content .taskClick {
   color: #2B3137;
+  padding-right: 50px;
   cursor: pointer;
   line-height: 22px;
 }
@@ -806,11 +824,12 @@
   padding-top: 5px;
 }
 .modal-update__wrapper__body__content .alert {
-  color: #004085;
-  background-color: #cce5ff;
-  border-color: #b8daff;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
   padding: 10px;
   width: 95%;
+  display: none;
 }
 .modal-update__wrapper__body__content input {
   width: 100%;

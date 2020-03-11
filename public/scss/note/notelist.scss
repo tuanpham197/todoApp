@@ -51,6 +51,13 @@
         font: {
             family: 'Futura PT', sans-serif;
         }
+        .alert{
+            color: #004085;
+            background-color: #cce5ff;
+            border-color: #b8daff;
+            padding: 10px;
+            width: 95%;
+        }
         &_title{
             height: 23px;
             background-color: #F4F4F4;
@@ -130,6 +137,7 @@
                         left: 15px;
                     }
                     display: flex;
+                    flex-wrap: wrap;
                     justify-content: space-between;
                     .options{
                         display: flex;
@@ -155,6 +163,7 @@
                     }
                     .taskClick{
                         color:#2B3137; 
+                        padding-right: 50px;
                         cursor: pointer;
                         line-height: 22px;
                         #icon:first-child{

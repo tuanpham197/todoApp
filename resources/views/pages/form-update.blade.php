@@ -19,6 +19,9 @@
         </div>
     </div>
     <div class="detail_todo_content">
+        <div class="detail_todo_content__message">
+
+        </div>
         <form action="" method="post">
             <div class="detail_todo_content_title">
                 <div class="detail_todo_content_title_info">
@@ -90,7 +93,6 @@
 <script>
     var save = document.getElementById('saveBtn');
    
-    console.log(save);
     
     save.addEventListener('click',function(e){
         
@@ -105,7 +107,10 @@
             url : 'user/task/'+id,
             data : data,
             success:function(data){
-                console.log(data); 
+                let t = document.getElementsByClassName('detail_todo_content__message');
+                t[0].innerHTML = `<div class="alert">
+                                    <p>Update successfully</p>
+                                `; 
             }
         })
     });

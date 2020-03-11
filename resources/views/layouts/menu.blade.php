@@ -78,6 +78,11 @@
             </li>
             <li><a href="{{route('get.clip')}}"><span><i class="fas fa-paperclip"></i></span>Clip</a></li>
             <li><a href="user/tasks/get-task-is-delete"><span><i class="fas fa-trash"></i></span>Delete</a></li>
+            <li>
+                <a href="user/category/get/all">
+                    <span><i class="fas fa-tasks"></i></span>Manager Category
+                </a>
+            </li>
         </ul>
     </div>
 </section>

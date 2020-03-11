@@ -201,8 +201,12 @@
                 
                 for (i = 0; i < arrElement.length; i++) {           
                     arrElement[i].addEventListener("click", function() {
-                        // console.log(this.parentElement);
-                        // this.parentElement.
+                        
+                        let e = document.getElementsByClassName('list_todo_boxList_task_item_content');
+                        [...e].forEach(item=>{
+                            item.classList.remove('active');
+                        });
+                        this.parentElement.classList.add('active');
                         var id = $(this).attr("data-id");
                         $.ajax({
                             type:'GET',

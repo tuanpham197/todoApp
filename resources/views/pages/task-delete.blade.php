@@ -26,7 +26,9 @@
                     </span>
                 </div>
                 @isset($mess)
-                    {{$mess}}
+                    <div class="alert">
+                        {{$mess}}
+                    </div>
                 @endisset
                 <div class="list_todo_boxList_task">
                     @foreach ($arrTask as $item)

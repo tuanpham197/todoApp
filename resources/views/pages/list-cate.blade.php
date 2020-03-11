@@ -91,24 +91,32 @@
     btnUpdate.addEventListener('click',function(){
         event.preventDefault();
         let item = $('#form-update').serializeArray();
-        
-        $.ajax({
-            type : "POST",
-            url : 'user/category/update/'+item[0].value,
-            data : {
-                "_token": "{{ csrf_token() }}",
-                "key" : item
-            },
-            success: function(data){
-                if(data === "fail"){
-                    let ele = document.getElementById('modal__Error');
-                    ele.innerHTML = "Update fails, Please check category name";
+        console.log(item);
+        if(item[1].value === ""){
+            let ele = document.getElementById('modal__Error');
+            ele.style.display = "block";
+            ele.innerHTML = "Update fails, Please check category name"; 
+        }else{
+             $.ajax({
+                type : "POST",
+                url : 'user/category/update/'+item[0].value,
+                data : {
+                    "_token": "{{ csrf_token() }}",
+                    "key" : item
+                },
+                success: function(data){
+                    if(data === "fail"){
+                        let ele = document.getElementById('modal__Error');
+                        ele.style.display = "block";
+                        ele.innerHTML = "Update fails, Please check category name";
+                    }
+                    else{
+                        location.reload();
+                    }
                 }
-                else{
-                    location.reload();
-                }
-            }
-        })
+            })
+        }
+       
         
     })
 
