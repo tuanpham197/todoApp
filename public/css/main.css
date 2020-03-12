@@ -617,6 +617,8 @@
   outline: none;
 }
 .detail_todo_content_text {
+  width: 80%;
+  word-break: break-word;
   font-family: "Futura PT Book", sans-serif;
   font-size: 16px;
   margin-left: 40px;

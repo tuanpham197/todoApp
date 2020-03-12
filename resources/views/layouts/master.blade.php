@@ -222,7 +222,7 @@
                                             <a href="user/tasks/update/${data.id}">
                                                 <img src="images/pen-solid.png" alt=""><span class="hidd">Edit</span> 
                                             </a>
-                                            <a href="">
+                                            <a href="javascript:void(0)" id="saveBtn">
                                                 <img src="images/save-solid.png" alt=""><span class="hidd">Save</span> 
                                             </a>
                                             <a href="#" id="clipDetail" data-id=${data.id} onclick="clipAdd(this)">

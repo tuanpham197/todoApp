@@ -93,6 +93,7 @@
                 }
             }
             &_text{
+                
                 padding: {
                     left: 10px;
                 }
@@ -120,6 +121,8 @@
             }
         }
         &_text{
+            width: 80%;
+            word-break: break-word;
             font: {
                 family: 'Futura PT Book',sans-serif;
                 size: 16px;

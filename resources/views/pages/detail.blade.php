@@ -44,4 +44,13 @@
        
     </div>
     @endisset
+
+    <script>
+        var save = document.getElementById('saveBtn');
+        save.addEventListener('click',function(){
+            event.preventDefault();
+            console.log("asd");
+            
+        })
+    </script>
 </section>
